@@ -1,0 +1,34 @@
+{
+  "projects":[
+    {
+      "title": "Site Porte JR",
+      "mainImagePath": "images/porte.png",
+      "description": "Lorem Ipsum é simply uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.",
+      "link": "portejr.com.br",
+      "techs":[
+        {
+          "name":"wordpress",
+          "logoPath": "/images/logos/wordpress.png",
+          "description": "WordPressEn",
+          "link": "https://wordpress.org/"
+        }
+      ],
+      "imagesDirectory":"Folder name"
+    },
+    {
+      "title": "Hipátia",
+      "mainImagePath": "images/hipatia.png",
+      "description": "Lorem Ipsum é splsplsk uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.",
+      "link": "portejr.com.br",
+      "techs":[
+        {
+          "name":"wordpress",
+          "logoPath": "/images/logos/wordpress.png",
+          "description": "WordPress",
+          "link": "https://br.wordpress.org/"
+        }
+      ],
+      "imagesDirectory":"Folder name"
+    }
+  ]
+}
