@@ -15,7 +15,7 @@ var plugins = [{
       options: {"plugins":[],"siteUrl":"https://www.example.com"},
     },{
       plugin: require('/home/vinicius/code/mysite/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
-      options: {"plugins":[],"displayName":true},
+      options: {"plugins":[],"displayName":false},
     },{
       plugin: require('/home/vinicius/code/mysite/gatsby-ssr'),
       options: {"plugins":[]},
