@@ -1,4 +1,21 @@
 {
+  "getInTouch": "Entre em Contato",
+  "namePlaceholder": "Digite seu nome",
+  "nameLabel": "Nome",
+  "nameRequired": "Nome é um campo obrigatório",
+  "emailPlaceholder": "Digite seu E-mail",
+  "emailLabel": "E-mail",
+  "emailInvalid": "Digite um E-mail válido",
+  "emailRequired": "E-mail é um campo obrigatório",
+  "subjectPlaceholder": "Se quiser, digite um assunto",
+  "subjectLabel": "Assunto",
+  "phonePlaceholder": "Se quiser, coloque seu número",
+  "phoneLabel": "Número de celular",
+  "phoneInvalid": "Digite um Número válido",
+  "messagePlaceholder": "Digite aqui uma mensagem incrível (Não vale escrever 'incrível' nem 'mensagem incrível')",
+  "messageLabel": "Mensagem",
+  "messageRequired": "Mensagem é um campo obrigatório",
+  "Send": "Enviar",
   "projects":[
     {
       "title": "Site Porte JR",
@@ -19,13 +36,25 @@
       "title": "Hipátia",
       "mainImagePath": "images/hipatia.png",
       "description": "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.",
-      "link": "portejr.com.br",
+      "link": "",
       "techs":[
         {
-          "name":"wordpress",
-          "logoPath": "/images/logos/wordpress.png",
-          "description": "WordPress",
-          "link": "https://br.wordpress.org/"
+          "name":"native",
+          "logoPath": "/images/logos/_native.png",
+          "description": "React Native",
+          "link": "https://reactnative.dev/"
+        },
+        {
+          "name":"node",
+          "logoPath": "/images/logos/_nodejs.png",
+          "description": "NodeJs",
+          "link": "https://nodejs.org/"
+        },
+        {
+          "name":"mongoDB",
+          "logoPath": "/images/logos/mongoDB.png",
+          "description": "MongoDB",
+          "link": "https://www.mongodb.com/"
         }
       ],
       "imagesDirectory":"Folder name"

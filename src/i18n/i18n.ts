@@ -4,24 +4,20 @@ import { initReactI18next } from "react-i18next";
 
 // the translations
 // (tip move them in a JSON file and import them)
-const resources = {
-  en: {
-    translation: {
-      title: "hello world",
-      description:{
-        body:"uma descriÇao"
-      }
-    }
-  },
-  pt: {
-    translation: {
-      title:"oi mundo",
-      description:{
-        body:"uma descriÇao"
-      }
-    }
-  }
-};
+// const resources = {
+//   en: {
+//     translation: {
+//       getInTouch: "Get in Touch",
+//       namePlaceholder: "Enter your name",
+//     }
+//   },
+//   pt: {
+//     translation: {
+//       getInTouch: "Entre em Contato",
+//       namePlaceholder: "Digite seu nome",
+//     }
+//   }
+// };
 
 i18n
   .use(Backend)

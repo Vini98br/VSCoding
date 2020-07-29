@@ -11,6 +11,7 @@ const theme: DefaultTheme = {
     green:	'#50fa7b',	
     orange:	'#ffb86c',	
     pink:	'#ff79c6',	
+    lightPink:'#ff79c647',
     purple:	'#bd93f9',	
     red:	'#ff5555',	
     yellow:	'#f1fa8c',

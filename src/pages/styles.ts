@@ -14,7 +14,7 @@ export const ProjectDiv = styled.div`
   align-items: center;
 `;
 
-export const StyledParallaxLayer = styled(ParallaxLayer)<{invert: boolean}>`
+export const StyledParallaxLayer = styled(ParallaxLayer)<{invert?: boolean}>`
   background-color: ${props => props.invert ? 'unset' : props.theme.colors.foreground};
   opacity:0.8;
   background-repeat: no-repeat;
@@ -100,7 +100,8 @@ export const AvailableOn = styled.span`
 `;
 
 export const LittleLogo = styled.img`
-  width:30px;
+  width:auto;
+  height: 50px;
   margin: 0 10px;
   cursor: pointer;
 `;

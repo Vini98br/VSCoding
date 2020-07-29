@@ -1,24 +1,26 @@
 {
+  "getInTouch": "Get in Touch",
+  "namePlaceholder": "Enter your name",
+  "nameLabel": "Name",
+  "nameRequired": "Name is a required field",
+  "emailPlaceholder": "Enter your E-mail",
+  "emailLabel": "E-mail",
+  "emailInvalid": "Enter a valid E-mail",
+  "emailRequired": "E-mail is a required field",
+  "subjectPlaceholder": "If you want, enter a subject",
+  "subjectLabel": "Subject",
+  "phonePlaceholder": "If you want, enter you phone number",
+  "phoneLabel": "Phone number",
+  "phoneInvalid": "Enter a valid phone number",
+  "messagePlaceholder": "Enter here an awesome message",
+  "messageLabel": "Message",
+  "messageRequired": "Message is a required field",
+  "Send": "Send",
   "projects":[
     {
       "title": "Site Porte JR",
       "mainImagePath": "images/porte.png",
-      "description": "Lorem Ipsum é simply uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.",
-      "link": "portejr.com.br",
-      "techs":[
-        {
-          "name":"wordpress",
-          "logoPath": "/images/logos/wordpress.png",
-          "description": "WordPressEn",
-          "link": "https://wordpress.org/"
-        }
-      ],
-      "imagesDirectory":"Folder name"
-    },
-    {
-      "title": "Hipátia",
-      "mainImagePath": "images/hipatia.png",
-      "description": "Lorem Ipsum é splsplsk uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.",
+      "description": "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.",
       "link": "portejr.com.br",
       "techs":[
         {
@@ -26,6 +28,33 @@
           "logoPath": "/images/logos/wordpress.png",
           "description": "WordPress",
           "link": "https://br.wordpress.org/"
+        }
+      ],
+      "imagesDirectory":"Folder name"
+    },
+    {
+      "title": "Hipátia",
+      "mainImagePath": "images/hipatia.png",
+      "description": "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.",
+      "link": "",
+      "techs":[
+        {
+          "name":"native",
+          "logoPath": "/images/logos/_native.png",
+          "description": "React Native",
+          "link": "https://reactnative.dev/"
+        },
+        {
+          "name":"node",
+          "logoPath": "/images/logos/_nodejs.png",
+          "description": "NodeJs",
+          "link": "https://nodejs.org/"
+        },
+        {
+          "name":"mongoDB",
+          "logoPath": "/images/logos/mongoDB.png",
+          "description": "MongoDB",
+          "link": "https://www.mongodb.com/"
         }
       ],
       "imagesDirectory":"Folder name"

@@ -11,7 +11,6 @@ export const StyledTooltip = styled(Tooltip)`
 
 
 export default function MyTooltip({children, title,...other}: TooltipProps) {
-  const [state, setState] = useState();
   
   return (
     <StyledTooltip 
