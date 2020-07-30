@@ -1,4 +1,7 @@
 var plugins = [{
+      plugin: require('/home/vinicius/code/mysite/node_modules/gatsby-plugin-google-analytics/gatsby-ssr'),
+      options: {"plugins":[],"trackingId":"UA-174028885-1","head":true},
+    },{
       plugin: require('/home/vinicius/code/mysite/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
     },{
@@ -8,14 +11,11 @@ var plugins = [{
       plugin: require('/home/vinicius/code/mysite/node_modules/gatsby-plugin-material-ui/gatsby-ssr'),
       options: {"plugins":[]},
     },{
-      plugin: require('/home/vinicius/code/mysite/node_modules/gatsby-plugin-google-analytics/gatsby-ssr'),
-      options: {"plugins":[],"trackingId":"54949494"},
-    },{
       plugin: require('/home/vinicius/code/mysite/node_modules/gatsby-plugin-canonical-urls/gatsby-ssr'),
-      options: {"plugins":[],"siteUrl":"https://www.example.com"},
+      options: {"plugins":[],"siteUrl":"https://www.vscoding.com.br"},
     },{
       plugin: require('/home/vinicius/code/mysite/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
-      options: {"plugins":[],"displayName":true},
+      options: {"plugins":[],"displayName":false},
     },{
       plugin: require('/home/vinicius/code/mysite/gatsby-ssr'),
       options: {"plugins":[]},
