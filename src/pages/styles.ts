@@ -52,7 +52,7 @@ export const StyledLogo = styled.img`
   z-index:1;
 `;
 
-export const StyledMonitor = styled.img`
+export const StyledMainImage = styled.img`
   z-index: 2;
   width: 600px;
   /* position: absolute; */

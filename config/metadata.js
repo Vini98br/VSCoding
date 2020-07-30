@@ -7,10 +7,6 @@ module.exports = {
     {
       name: "Home",
       link: "/"
-    },
-    {
-      name: "Sobre mim",
-      link: "/about"
     }
   ]
 }

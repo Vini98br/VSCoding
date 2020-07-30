@@ -11,7 +11,7 @@ import {
   Container, ProjectTitle, ProjectDiv, Divider,
   StyledParallaxLayer, ProjectDescription,
   Techs, LittleLogo, StyledLogo, AvailableOn,
-  StyledMonitor
+  StyledMainImage
 } from "./styles";
 
 const getIntRandomNumber = (min: number, max: number) => {
@@ -78,6 +78,7 @@ export default function Home() {
     <Helmet>
       <title>Home</title>
       <meta charSet="utf-8" />
+      <meta name="description" content="Vs coding is simple website as portfólio to show all projects i`ve made."></meta>
     </Helmet>
     <Layout pages={pages}>
         <button onClick={(e)=>{
@@ -89,7 +90,7 @@ export default function Home() {
       {projects.map((project: Project, i: number) => (
         i % 2 === 0 ? 
           <StyledParallaxLayer invert={i % 2 !== 0} factor={0.8} offset={0.7} speed={0.7}>
-            <StyledMonitor src={project.mainImagePath}/>
+            <StyledMainImage src={project.mainImagePath} alt={project.title}/>
             <ProjectDiv>
               <ProjectTitle>{t(`projects.${i}.title`)}</ProjectTitle>
               <Divider />
@@ -102,7 +103,7 @@ export default function Home() {
                 Techs: 
                 {project.techs.map((obj, j) => (
                   <Tooltip title={t(`projects.${i}.techs.${j}.description`)}>
-                    <LittleLogo src={obj.logoPath} onClick={() => window.open(obj.link, '_blank')} style={{width: 50}}/> 
+                    <LittleLogo src={obj.logoPath} alt={obj.name} onClick={() => window.open(obj.link, '_blank')} style={{width: 50}}/> 
                   </Tooltip>
                 ))}
               </Techs>
@@ -125,13 +126,13 @@ export default function Home() {
                 Techs: 
                 {project.techs.map((obj, j) => (
                   <Tooltip title={t(`projects.${i}.techs.${j}.description`)}>
-                    <LittleLogo src={obj.logoPath} onClick={() => window.open(obj.link, '_blank')}/> 
+                    <LittleLogo src={obj.logoPath} alt={obj.name} onClick={() => window.open(obj.link, '_blank')}/> 
                   </Tooltip>
                 ))}
               </Techs>
               <Divider />
             </ProjectDiv>
-            <StyledMonitor src={project.mainImagePath}/>
+            <StyledMainImage src={project.mainImagePath} alt={project.title}/>
           </StyledParallaxLayer>
       ))} 
       <StyledParallaxLayer factor={0.8} offset={1.95} speed={0.7}>
@@ -140,7 +141,7 @@ export default function Home() {
       {images.filter(image => image.node.name[0] !== '_' ).map((obj, i) => (
         <div id={obj.node.id} >
           <ParallaxLayer speed={-0.1} offset={(i * 0.6) + 0.5}>
-            <StyledLogo src={obj.node.publicURL} style={{position:'absolute', right:getIntRandomNumber(50,900),opacity: 0.2}}/> 
+            <StyledLogo src={obj.node.publicURL} alt={obj.node.name} style={{position:'absolute', right:getIntRandomNumber(50,900),opacity: 0.2}}/> 
           </ParallaxLayer>
         </div>
       ))}
