@@ -6,6 +6,7 @@ import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons'
 import "../i18n/i18n";
 import Tooltip from "../components/Tooltip/Tooltip";
 import ContactForm from "../components/ContactForm/ContactForm";
+import { Helmet } from "react-helmet";
 import { 
   Container, ProjectTitle, ProjectDiv, Divider,
   StyledParallaxLayer, ProjectDescription,
@@ -72,9 +73,12 @@ export default function Home() {
   const { images, projects } = useHomeData();
   const pages = 5;
   console.log(i18n.language)
-  const isSSR = typeof window === "undefined";
-  return( 
-    !isSSR &&
+  return(
+    <>
+    <Helmet>
+      <title>Home</title>
+      <meta charSet="utf-8" />
+    </Helmet>
     <Layout pages={pages}>
         <button onClick={(e)=>{
           e.preventDefault()
@@ -141,5 +145,6 @@ export default function Home() {
         </div>
       ))}
     </Layout>
+    </>
   );
 }
