@@ -3,6 +3,13 @@ const siteMetadata = require('./config/metadata');
 module.exports = {
   siteMetadata,
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-174028885-1",
+        head: true,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
     `gatsby-transformer-json`,
@@ -42,15 +49,9 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "54949494",
-      },
-    },
-    {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://www.example.com`,
+        siteUrl: `https://www.vscoding.com.br`,
       },
     },
     {
