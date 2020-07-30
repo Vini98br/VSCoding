@@ -76,6 +76,7 @@ export default function Home() {
   return(
     <>
     <Helmet>
+      <html lang={i18n.language}/>
       <title>Home</title>
       <meta charSet="utf-8" />
       <meta name="description" content="Vs coding is simple website as portfólio to show all projects i`ve made."></meta>

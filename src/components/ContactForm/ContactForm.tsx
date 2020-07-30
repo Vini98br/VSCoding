@@ -93,6 +93,7 @@ const ContactForm: React.FC = () => {
           <Controller 
             name='phone' 
             control={control}
+            id='phone'
             as={PhoneNumberInput}
           />
           <ErrorMessage>{errors.phone?.message}</ErrorMessage>
@@ -113,13 +114,14 @@ const ContactForm: React.FC = () => {
   );
 }
 
-const PhoneNumberInput = ({onChange, value, ...rest}) => {
+const PhoneNumberInput = ({onChange, value, id, ...rest}) => {
   const { t, i18n } = useTranslation();
   const [state, setState] = React.useState(value);
   return (
     <NumberFormat 
       {...rest}
       value={state}
+      id={id}
       format={i18n.language === 'pt' ? "(##) #####-####" : "+1 (###) ###-####"} 
       mask=" " 
       placeholder={t('phonePlaceholder')} 
