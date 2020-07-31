@@ -8,6 +8,9 @@ export const ContactDiv = styled.div`
   justify-content: flex-start;
   align-items: center;
   padding-top: 50px;
+  @media screen and (max-width: 424px), (max-height: 768px){
+    padding:unset ;
+  }
 `;
 
 export const ContactTitle = styled.h2`
@@ -25,6 +28,9 @@ export const Form = styled.form`
   }
   @media screen and (max-width: 424px){
     width: 90%;
+    ${ContactDiv} {
+      padding:unset ;
+    }
   }
   
   height: 100%;

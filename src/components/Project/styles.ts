@@ -46,3 +46,71 @@ export const LittleLogo = styled.img`
   margin: 0 10px;
   cursor: pointer;
 `;
+
+export const ProjectDiv = styled.div<{invert?: boolean}>`
+  margin-right:100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media screen and (min-width:1081px){
+    margin-right:${props => props.invert ? 'unset' : '100px'};;
+    margin-left:${props => props.invert ? '100px' : 'unset'};
+  }
+  @media screen and (min-width: 660px) and (max-width:1080px){
+    padding: 10px 40px;
+    margin-right: unset;
+    margin-left:unset;
+    ${ProjectDescription} {
+      font-size: 15px;
+    }
+    ${ProjectTitle} {
+      font-size: 17px;
+    }
+    ${AvailableOn} span,span a, span{
+      font-size: 15px;
+    }
+    ${LittleLogo} {
+      width: auto;
+      height:40px;
+    }
+  }
+  @media screen and (min-width: 425px) and (max-width:659px){
+    padding: 10px 40px;
+    margin-right: unset;
+    margin-left:unset;
+    ${ProjectDescription} {
+      font-size: 14px;
+    }
+    ${ProjectTitle} {
+      font-size: 16px;
+    }
+    ${AvailableOn} span,span a, span{
+      font-size: 14px;
+    }
+    ${LittleLogo} {
+      width: auto;
+      height:35px;
+    }
+  }
+  @media screen and (max-width: 424px){
+    padding: 10px 40px;
+    margin-right: unset;
+    margin-left:unset;
+    ${ProjectDescription} {
+      font-size: 13px;
+      text-align: center;
+    }
+    ${ProjectTitle} {
+      font-size: 15px;
+    }
+    ${AvailableOn} span,span a, span{
+      font-size: 13px;
+    }
+    ${LittleLogo} {
+      width: auto;
+      height:35px;
+    }
+  }
+`;

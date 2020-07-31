@@ -5,15 +5,6 @@ export const Container = styled.div`
   color: ${props => props.theme.colors.comment};
 `;
 
-export const ProjectDiv = styled.div`
-  margin-right:100px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
 export const StyledMainImage = styled.img`
   z-index: 2;
   width: 600px;
@@ -41,11 +32,8 @@ export const StyledParallaxLayer = styled(ParallaxLayer)<{invert?: boolean}>`
   @media screen and (max-width:1080px){
     flex-direction: ${props => props.invert ? 'column-reverse' : 'column'};
     justify-content: center;
-    ${ProjectDiv} {
-      padding: 10px 40px;
-      margin-right: unset;
-      margin-left:unset;
-    }
+  }
+  @media screen and (min-width: 660px) and (max-width:1080px){
     ${StyledMainImage} {
       width: 400px;
     }
@@ -53,11 +41,23 @@ export const StyledParallaxLayer = styled(ParallaxLayer)<{invert?: boolean}>`
       width: 200px;
     }
   }
-  @media screen and (min-width:1081px){
-    ${ProjectDiv} {
-      margin-right:${props => props.invert ? 'unset' : '100px'};;
-      margin-left:${props => props.invert ? '100px' : 'unset'};
+  @media screen and (min-width: 425px) and (max-width:659px){
+    ${StyledMainImage} {
+      width: 300px;
     }
+    ${StyledLogo} {
+      width: 200px;
+    }
+  }
+  @media screen and (max-width:424px),  (max-height: 768px){
+    ${StyledMainImage} {
+      display: none;
+    }
+    ${StyledLogo} {
+      width: 150px;
+    }
+  }
+  @media screen and (min-width:1081px){
   }
   span, p, h2, span a{
     color: ${props => props.invert ? props.theme.colors.foreground : props.theme.colors.currentLine};

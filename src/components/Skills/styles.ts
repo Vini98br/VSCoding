@@ -5,7 +5,7 @@ export const SkillsWrapper = styled.div`
   display: flex;
   flex-flow: column wrap;
   width: 100%;
-  height: 120%;
+  height: 105%;
   padding: 0 70px;
   margin-top: 10px;
 `;
@@ -62,7 +62,7 @@ export const SkillsDiv = styled.div`
       height: 15px;
     }
     ${SkillsWrapper}{
-      height: 95%;
+      height: 90%;
     }
   }
   @media screen and (min-width: 425px) and (max-width:659px){
@@ -80,7 +80,7 @@ export const SkillsDiv = styled.div`
       font-size: 18px;
     }
   }
-  @media screen and (min-width: 320px) and (max-width:424px){
+  @media screen and (max-width:424px),  (max-height: 768px){
     ${Skill} {
       padding: 10px 40px 15px 10px;
     }
@@ -91,7 +91,7 @@ export const SkillsDiv = styled.div`
       font-size: 16px;
     }
     ${SkillsWrapper}{
-      height: 95%;
+      height: 130%;
       padding: 0 0 30px 30px;
     }
   }
