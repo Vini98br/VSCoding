@@ -4,13 +4,14 @@ import { graphql, useStaticQuery } from "gatsby";
 import { useTranslation } from "react-i18next";
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons'
 import "../i18n/i18n";
-import Tooltip from "../components/Tooltip/Tooltip";
+import Project from "../components/Project/Project";
+import Skills from "../components/Skills/Skills";
 import ContactForm from "../components/ContactForm/ContactForm";
 import { Helmet } from "react-helmet";
 import { 
-  Container, ProjectTitle, ProjectDiv, Divider,
-  StyledParallaxLayer, ProjectDescription,
-  Techs, LittleLogo, StyledLogo, AvailableOn,
+  Divider,
+  StyledParallaxLayer,
+  StyledLogo,
   StyledMainImage
 } from "./styles";
 
@@ -34,6 +35,7 @@ const useHomeData = () => {
         ptJson {
           projects {
             title
+            offset
             mainImagePath
             description
             imagesDirectory
@@ -45,11 +47,24 @@ const useHomeData = () => {
               logoPath
             }
           }
+          skills {
+            name
+            rate
+          }
         }
       }
     `
   );
-  return {images: allFile.edges, projects: ptJson.projects};
+  return {
+    images: allFile.edges, 
+    projects: ptJson.projects,
+    skills: ptJson.skills
+  };
+}
+
+export interface ISkill {
+  name: string;
+  rate: number;
 }
 
 interface Tech {
@@ -59,94 +74,55 @@ interface Tech {
   logoPath: string;
 }
 
-interface Project {
+export interface IProject {
   description: string;
   imagesDirectory: string;
   link: string;
   techs: Tech[];
   title: string;
+  offset: number;
   mainImagePath:string;
 }
 
 export default function Home() {
   const { t, i18n } = useTranslation();
-  const { images, projects } = useHomeData();
+  const { images, projects, skills } = useHomeData();
   const pages = 5;
-  console.log(i18n.language)
   return(
     <>
-    <Helmet>
-      <html lang={i18n.language}/>
-      <title>Home</title>
-      <meta charSet="utf-8" />
-      <meta name="description" content="Vs coding is simple website as portfólio to show all projects i`ve made."></meta>
-    </Helmet>
-    <Layout pages={pages}>
-        <button onClick={(e)=>{
-          e.preventDefault()
-          i18n.changeLanguage('pt')}}>pt</button>
-        <button onClick={(e)=>{
-          e.preventDefault()
-          i18n.changeLanguage('en')}}>en</button>
-      {projects.map((project: Project, i: number) => (
-        i % 2 === 0 ? 
-          <StyledParallaxLayer invert={i % 2 !== 0} factor={0.8} offset={0.7} speed={0.7}>
+      <Helmet>
+        <html lang={i18n.language}/>
+        <title>Home</title>
+        <meta charSet="utf-8" />
+        <meta name="description" content="Vs coding is simple website as portfólio to show all projects i`ve made."></meta>
+      </Helmet>
+      <Layout pages={pages}>
+          <button onClick={(e)=>{
+            e.preventDefault()
+            i18n.changeLanguage('pt')}}>pt</button>
+          <button onClick={(e)=>{
+            e.preventDefault()
+            i18n.changeLanguage('en')}}>en</button>
+        {projects.map((project: IProject, i: number) => (
+          <StyledParallaxLayer invert={i % 2 !== 0} factor={0.8} offset={project.offset} speed={0.7}>
             <StyledMainImage src={project.mainImagePath} alt={project.title}/>
-            <ProjectDiv>
-              <ProjectTitle>{t(`projects.${i}.title`)}</ProjectTitle>
-              <Divider />
-              <AvailableOn>
-                Disponível em:
-                <a href={`http://${project.link}`} target="_blank" rel="noopener noreferrer">{project.link}</a>
-              </AvailableOn>
-              <ProjectDescription>{t(`projects.${i}.description`)}</ProjectDescription>
-              <Techs>
-                Techs: 
-                {project.techs.map((obj, j) => (
-                  <Tooltip title={t(`projects.${i}.techs.${j}.description`)}>
-                    <LittleLogo src={obj.logoPath} alt={obj.name} onClick={() => window.open(obj.link, '_blank')} style={{width: 50}}/> 
-                  </Tooltip>
-                ))}
-              </Techs>
-              <Divider />
-            </ProjectDiv>
+            <Project project={project} index={i} />
           </StyledParallaxLayer>
-        :
-          <StyledParallaxLayer invert={i % 2 !== 0} factor={0.8} offset={1} speed={0.7}>
-            <ProjectDiv>
-              <ProjectTitle>{t(`projects.${i}.title`)}</ProjectTitle>
-              <Divider />
-              {!!project.link &&
-                <AvailableOn>
-                  Disponível em:
-                  <a href={`http://${project.link}`} target="_blank" rel="noopener noreferrer">{project.link}</a>
-                </AvailableOn>
-              }
-              <ProjectDescription>{t(`projects.${i}.description`)}</ProjectDescription>
-              <Techs>
-                Techs: 
-                {project.techs.map((obj, j) => (
-                  <Tooltip title={t(`projects.${i}.techs.${j}.description`)}>
-                    <LittleLogo src={obj.logoPath} alt={obj.name} onClick={() => window.open(obj.link, '_blank')}/> 
-                  </Tooltip>
-                ))}
-              </Techs>
-              <Divider />
-            </ProjectDiv>
-            <StyledMainImage src={project.mainImagePath} alt={project.title}/>
-          </StyledParallaxLayer>
-      ))} 
-      <StyledParallaxLayer factor={0.8} offset={1.95} speed={0.7}>
-        <ContactForm />
-      </StyledParallaxLayer>
-      {images.filter(image => image.node.name[0] !== '_' ).map((obj, i) => (
-        <div id={obj.node.id} >
-          <ParallaxLayer speed={-0.1} offset={(i * 0.6) + 0.5}>
-            <StyledLogo src={obj.node.publicURL} alt={obj.node.name} style={{position:'absolute', right:getIntRandomNumber(50,900),opacity: 0.2}}/> 
-          </ParallaxLayer>
-        </div>
-      ))}
-    </Layout>
+        ))} 
+        <StyledParallaxLayer invert factor={0.8} offset={2.20} speed={0.7}>
+          <Skills skills={skills} />
+        </StyledParallaxLayer>
+        <StyledParallaxLayer factor={0.8} offset={3} speed={0.7}>
+          <ContactForm />
+        </StyledParallaxLayer>
+        {images.filter(image => image.node.name[0] !== '_' ).map((obj, i) => (
+          <div id={obj.node.id} >
+            <ParallaxLayer speed={-0.1} offset={(i * 0.6) + 0.5}>
+              <StyledLogo src={obj.node.publicURL} alt={obj.node.name} style={{position:'absolute', right:getIntRandomNumber(50,900),opacity: 0.2}}/> 
+            </ParallaxLayer>
+          </div>
+        ))}
+      </Layout>
     </>
   );
 }

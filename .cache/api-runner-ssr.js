@@ -15,7 +15,7 @@ var plugins = [{
       options: {"plugins":[],"siteUrl":"https://www.vscoding.com.br"},
     },{
       plugin: require('/home/vinicius/code/mysite/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
-      options: {"plugins":[],"displayName":false},
+      options: {"plugins":[],"displayName":true},
     },{
       plugin: require('/home/vinicius/code/mysite/gatsby-ssr'),
       options: {"plugins":[]},

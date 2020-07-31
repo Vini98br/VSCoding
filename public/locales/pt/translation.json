@@ -12,13 +12,14 @@
   "phonePlaceholder": "Se quiser, coloque seu número",
   "phoneLabel": "Número de celular",
   "phoneInvalid": "Digite um Número válido",
-  "messagePlaceholder": "Digite aqui uma mensagem incrível (Não vale escrever 'incrível' nem 'mensagem incrível')",
+  "messagePlaceholder": "Digite aqui uma mensagem incrível",
   "messageLabel": "Mensagem",
   "messageRequired": "Mensagem é um campo obrigatório",
   "Send": "Enviar",
   "projects":[
     {
       "title": "Site Porte JR",
+      "offset": 0.7,
       "mainImagePath": "images/porte.png",
       "description": "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.",
       "link": "portejr.com.br",
@@ -33,7 +34,8 @@
       "imagesDirectory":"Folder name"
     },
     {
-      "title": "Hipátia",
+      "title": "Aplicativo Hipátia",
+      "offset": 1,
       "mainImagePath": "images/hipatia.png",
       "description": "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.",
       "link": "",
@@ -58,6 +60,68 @@
         }
       ],
       "imagesDirectory":"Folder name"
+    },
+    {
+      "title": "Checkout e Dashboard AVEC",
+      "offset": 1.9,
+      "mainImagePath": "images/avec.png",
+      "description": "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.",
+      "link": "",
+      "techs":[
+        {
+          "name":"react",
+          "logoPath": "/images/logos/react.png",
+          "description": "React Js",
+          "link": "https://reactjs.org/"
+        }
+      ],
+      "imagesDirectory":"Folder name"
+    }
+  ],
+  "skills":[
+    {
+      "name": "ReactJS",
+      "rate": 0.90
+    },
+    {
+      "name": "Git",
+      "rate": 0.90
+    },
+    {
+      "name": "HTML CSS",
+      "rate": 0.90
+    },
+    {
+      "name": "TypeScript",
+      "rate": 0.80
+    },
+    {
+      "name": "React Native",
+      "rate": 0.70
+    },
+    {
+      "name": "Gatsby",
+      "rate": 0.70
+    },
+    {
+      "name": "NodeJS",
+      "rate": 0.70
+    },
+    {
+      "name": "NoSQL DB",
+      "rate": 0.50
+    },
+    {
+      "name": "Laravel PHP",
+      "rate": 0.40
+    },
+    {
+      "name": "C C++",
+      "rate": 0.40
+    },
+    {
+      "name": "Java C#",
+      "rate": 0.30
     }
   ]
 }

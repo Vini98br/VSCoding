@@ -41,11 +41,9 @@ const useSiteMetadata = () => {
 const Layout = ({children, pages}) => {
   const { menuLinks } = useSiteMetadata(); 
   let parallax;
-  const isSSR = typeof window === "undefined";
   return (
     <>
       <GlobalStyle theme={theme} />
-      {!isSSR && 
         <Container pages={pages} scrolling ref={ref => parallax = ref}>
           <Header menuLinks={menuLinks} />
           <Content>
@@ -53,7 +51,6 @@ const Layout = ({children, pages}) => {
           </Content>
           {/* <Footer /> */}
         </Container>
-      }
     </>
     
   );

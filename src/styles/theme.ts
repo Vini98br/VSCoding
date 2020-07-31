@@ -13,6 +13,7 @@ const theme: DefaultTheme = {
     pink:	'#ff79c6',	
     lightPink:'#ff79c647',
     purple:	'#bd93f9',	
+    lightPurple:	'#bd93f985',
     red:	'#ff5555',	
     yellow:	'#f1fa8c',
   }
