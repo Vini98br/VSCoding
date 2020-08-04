@@ -1,14 +1,16 @@
 import React from 'react';
 import { ISkill } from "../../pages/index";
+import { useTranslation } from "react-i18next";
 import { 
-  SkillsDiv, SkillsTitle, Skill, SkillLable, SkillRate, 
+  Container, SkillsTitle, Skill, SkillLable, SkillRate, 
   Divider, SkillRateDiv,SkillsWrapper 
 } from './styles';
 
 const Skills: React.FC<{skills: ISkill[]}>= ({skills}) => {
+  const { t } = useTranslation();
   return (
-    <SkillsDiv>
-      <SkillsTitle>Skills</SkillsTitle>
+    <Container>
+      <SkillsTitle>{t('skillSectionTitle')}</SkillsTitle>
       <Divider />
       <SkillsWrapper>    
         {skills.map(obj => (
@@ -22,7 +24,7 @@ const Skills: React.FC<{skills: ISkill[]}>= ({skills}) => {
           </Skill>
         ))}
       </SkillsWrapper>
-    </SkillsDiv>
+    </Container>
   );
 }
 

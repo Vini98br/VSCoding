@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 
-
 export const SkillsWrapper = styled.div`
   display: flex;
   flex-flow: column wrap;
   width: 100%;
-  height: 105%;
+  height: 100%;
   padding: 0 70px;
   margin-top: 10px;
 `;
@@ -30,7 +29,7 @@ export const SkillLable = styled.p`
 export const SkillRateDiv = styled.div`
   height: 20px;
   width: 100%;
-  background-color: ${props => props.theme.colors.cyan}9e;
+  background-color: ${props => props.theme.colors.currentLine};
   border-radius:10px;
 `;
 
@@ -38,7 +37,7 @@ export const SkillRate = styled.div<{rate: number}>`
   width: ${props => props.rate*100}%;
   height: 100%;
   border-radius:10px;
-  background-color: ${props => props.theme.colors.cyan};
+  background-color: ${props => props.theme.colors.green};
 `;
 
 export const Divider = styled.hr`
@@ -46,7 +45,7 @@ export const Divider = styled.hr`
   border: 1px solid ${props => props.theme.colors.currentLine};
 `;
 
-export const SkillsDiv = styled.div`
+export const Container = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
@@ -91,7 +90,7 @@ export const SkillsDiv = styled.div`
       font-size: 16px;
     }
     ${SkillsWrapper}{
-      height: 130%;
+      height: 100%;
       padding: 0 0 30px 30px;
     }
   }

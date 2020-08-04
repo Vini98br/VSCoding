@@ -42,12 +42,12 @@ export const Techs = styled.span`
 
 export const LittleLogo = styled.img`
   width:auto;
-  height: 50px;
+  height: auto;
   margin: 0 10px;
   cursor: pointer;
 `;
 
-export const ProjectDiv = styled.div<{invert?: boolean}>`
+export const Container = styled.div<{invert?: boolean}>`
   margin-right:100px;
   width: 100%;
   display: flex;
@@ -71,10 +71,6 @@ export const ProjectDiv = styled.div<{invert?: boolean}>`
     ${AvailableOn} span,span a, span{
       font-size: 15px;
     }
-    ${LittleLogo} {
-      width: auto;
-      height:40px;
-    }
   }
   @media screen and (min-width: 425px) and (max-width:659px){
     padding: 10px 40px;
@@ -88,10 +84,6 @@ export const ProjectDiv = styled.div<{invert?: boolean}>`
     }
     ${AvailableOn} span,span a, span{
       font-size: 14px;
-    }
-    ${LittleLogo} {
-      width: auto;
-      height:35px;
     }
   }
   @media screen and (max-width: 424px){
@@ -107,10 +99,6 @@ export const ProjectDiv = styled.div<{invert?: boolean}>`
     }
     ${AvailableOn} span,span a, span{
       font-size: 13px;
-    }
-    ${LittleLogo} {
-      width: auto;
-      height:35px;
     }
   }
 `;

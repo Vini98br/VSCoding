@@ -1,4 +1,5 @@
 {
+  "skillSectionTitle": "Skills",
   "getInTouch": "Get in Touch",
   "namePlaceholder": "Enter your name",
   "nameLabel": "Name",
@@ -7,9 +8,9 @@
   "emailLabel": "E-mail",
   "emailInvalid": "Enter a valid E-mail",
   "emailRequired": "E-mail is a required field",
-  "subjectPlaceholder": "If you want, enter a subject",
+  "subjectPlaceholder": "Enter a subject",
   "subjectLabel": "Subject",
-  "phonePlaceholder": "If you want, enter you phone number",
+  "phonePlaceholder": "Enter you phone number",
   "phoneLabel": "Phone number",
   "phoneInvalid": "Enter a valid phone number",
   "messagePlaceholder": "Enter here an awesome message",
@@ -20,6 +21,7 @@
     {
       "title": "Site Porte JR",
       "offset": 0.7,
+      "smOffset": 0.7,
       "mainImagePath": "images/porte.png",
       "description": "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.",
       "link": "portejr.com.br",
@@ -36,6 +38,7 @@
     {
       "title": "Hipátia Mobile App",
       "offset": 1,
+      "smOffset": 2,
       "mainImagePath": "images/hipatia.png",
       "description": "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.",
       "link": "",
@@ -64,6 +67,7 @@
     {
       "title": "Checkout and Dashboard AVEC",
       "offset": 1.9,
+      "smOffset": 2.3,
       "mainImagePath": "images/avec.png",
       "description": "Lorem Ipsum é simply uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.",
       "link": "",

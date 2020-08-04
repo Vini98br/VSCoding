@@ -6,7 +6,8 @@ import emailjs from 'emailjs-com';
 import NumberFormat from "react-number-format";
 import Swal from 'sweetalert2';
 import * as yup from "yup";
-import { ContactDiv, ContactTitle, Input, Form, Divider, TextArea, 
+import { 
+  Container, ContactTitle, Input, Form, Divider, TextArea, 
   Label, FormControl, ErrorMessage, RedSpan, SubmitButton
 } from './styles';
 
@@ -74,7 +75,7 @@ const ContactForm: React.FC = () => {
   }
 
   return (
-    <ContactDiv>
+    <Container id='#contact'>
       <ContactTitle>{t('getInTouch')}</ContactTitle>
       <Divider />
       <Form onSubmit={handleSubmit(onSubmit)}>
@@ -110,7 +111,7 @@ const ContactForm: React.FC = () => {
         </FormControl>
         <SubmitButton type='submit'>{t('Send')}</SubmitButton>
       </Form>
-    </ContactDiv>
+    </Container>
   );
 }
 

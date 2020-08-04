@@ -8,8 +8,6 @@ export const Container = styled.div`
 export const StyledMainImage = styled.img`
   z-index: 2;
   width: 600px;
-  /* position: absolute; */
-  /* left: -109px; */
 `;
 
 export const StyledLogo = styled.img`
@@ -51,13 +49,11 @@ export const StyledParallaxLayer = styled(ParallaxLayer)<{invert?: boolean}>`
   }
   @media screen and (max-width:424px),  (max-height: 768px){
     ${StyledMainImage} {
-      display: none;
+      width: 200px;
     }
     ${StyledLogo} {
       width: 150px;
     }
-  }
-  @media screen and (min-width:1081px){
   }
   span, p, h2, span a{
     color: ${props => props.invert ? props.theme.colors.foreground : props.theme.colors.currentLine};
@@ -71,14 +67,6 @@ export const StyledParallaxLayer = styled(ParallaxLayer)<{invert?: boolean}>`
   label {
     color: ${props => props.invert && 'rgba(248, 248, 242,0.98)'}
   }
-`;
-
-export const StyledCyanParallaxLayer = styled(ParallaxLayer)`
-  background-color: ${props => props.theme.colors.cyan};
-  opacity:0.8;
-  background-repeat: no-repeat;
-  box-shadow:13px 0px 64px 70px rgba(139, 233, 253, 0.98);
-  z-index:1;
 `;
 
 export const Divider = styled.hr`

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import { graphql, useStaticQuery } from "gatsby";
@@ -28,7 +28,12 @@ const useSiteMetadata = () => {
             title
             menuLinks {
               name
-              link
+              type
+              path
+              items{
+                name
+                type
+              }
             }
           }
         }
@@ -38,14 +43,14 @@ const useSiteMetadata = () => {
   return site.siteMetadata;
 }
 
-const Layout = ({children, pages}) => {
+const Layout = ({children, pages, projects, offsets}) => {
   const { menuLinks } = useSiteMetadata(); 
-  let parallax;
+  const parallax = useRef(null);
   return (
     <>
       <GlobalStyle theme={theme} />
-        <Container pages={pages} scrolling ref={ref => parallax = ref}>
-          <Header menuLinks={menuLinks} />
+        <Container pages={pages} scrolling ref={parallax}>
+          <Header menuLinks={menuLinks} parallaxRef={parallax} projects={projects} offsets={offsets}/>
           <Content>
             {children}
           </Content>

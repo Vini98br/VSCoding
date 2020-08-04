@@ -2,6 +2,9 @@ var plugins = [{
       plugin: require('/home/vinicius/code/mysite/node_modules/gatsby-plugin-google-analytics/gatsby-ssr'),
       options: {"plugins":[],"trackingId":"UA-174028885-1","head":true},
     },{
+      plugin: require('/home/vinicius/code/mysite/node_modules/gatsby-plugin-prefetch-google-fonts/gatsby-ssr'),
+      options: {"plugins":[],"fonts":[{"family":"Roboto","variants":["300","500","700"]}]},
+    },{
       plugin: require('/home/vinicius/code/mysite/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
     },{

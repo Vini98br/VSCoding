@@ -2,7 +2,7 @@ import React from 'react';
 import { IProject } from "../../pages/index";
 import Tooltip from "../Tooltip/Tooltip";
 import { useTranslation } from "react-i18next";
-import { ProjectDescription, ProjectTitle, Divider, AvailableOn, Techs, LittleLogo, ProjectDiv} from './styles';
+import { ProjectDescription, ProjectTitle, Divider, AvailableOn, Techs, LittleLogo, Container} from './styles';
 
 interface ProjectComponentProps {
   project: IProject
@@ -12,7 +12,7 @@ interface ProjectComponentProps {
 const ProjectComponent: React.FC<ProjectComponentProps> = ({project, index}) => {
   const { t } = useTranslation();
   return (
-    <ProjectDiv invert={index % 2 !== 0}>
+    <Container invert={index % 2 !== 0}>
       <ProjectTitle>{t(`projects.${index}.title`)}</ProjectTitle>
       <Divider />
       {!!project.link &&
@@ -31,7 +31,7 @@ const ProjectComponent: React.FC<ProjectComponentProps> = ({project, index}) => 
         ))}
       </Techs>
       <Divider />
-    </ProjectDiv>
+    </Container>
   );
 }
 

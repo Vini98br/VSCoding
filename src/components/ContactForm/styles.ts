@@ -1,6 +1,31 @@
 import styled from 'styled-components';
 
-export const ContactDiv = styled.div`
+export const ContactTitle = styled.h2`
+  font-size: 25px;
+  margin-bottom: 20px;
+`;
+
+export const FormControl = styled.div`
+  display:flex;
+  flex-direction:column;
+  width:100%;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+  &:last-child{
+    margin-bottom: 10px;
+  }
+`;
+
+export const Form = styled.form`
+  width: 40%;  
+  height: auto;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+`;
+
+export const Container = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
@@ -8,36 +33,30 @@ export const ContactDiv = styled.div`
   justify-content: flex-start;
   align-items: center;
   padding-top: 50px;
-  @media screen and (max-width: 424px), (max-height: 768px){
-    padding:unset ;
-  }
-`;
-
-export const ContactTitle = styled.h2`
-  font-size: 25px;
-  margin-bottom: 20px;
-`;
-
-export const Form = styled.form`
-  width: 40%;
-  @media screen and (min-width: 575px) and (max-width: 768px){
-    width: 60%;
-  }
-  @media screen and (min-width: 425px) and (max-width: 574px){
-    width: 80%;
-  }
-  @media screen and (max-width: 424px){
-    width: 90%;
-    ${ContactDiv} {
-      padding:unset ;
+  @media screen and (min-width: 1081px){
+    ${Form}{
+      margin-top: 20px;
     }
   }
-  
-  height: 100%;
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
+  @media screen and (min-width: 575px) and (max-width: 768px){
+    ${Form}{
+      width: 60%;
+    }
+  }
+  @media screen and (min-width: 425px) and (max-width: 574px){
+    ${Form}{
+      width: 80%;
+    }
+  }
+  @media screen and (max-width: 424px), (max-height: 768px){
+    ${Form}{
+      width: 90%;
+    }
+    ${FormControl}{
+      margin-bottom:10px;
+    }
+    padding: 20px 0 0 0;
+  }
 `;
 
 export const Input = styled.input`
@@ -97,17 +116,6 @@ export const TextArea = styled.textarea`
     border: 1px solid ${props => props.theme.colors.purple};
     box-shadow: 0 0 0 0.2rem ${props => props.theme.colors.lightPurple};
     transition:color .25s ease-in-out,background-color .25s ease-in-out,border-color .25s ease-in-out,box-shadow .25s ease-in-out;
-  }
-`;
-
-export const FormControl = styled.div`
-  display:flex;
-  flex-direction:column;
-  width:100%;
-  justify-content: flex-start;
-  margin-bottom: 20px;
-  &:last-child{
-    margin-bottom: 10px;
   }
 `;
 
