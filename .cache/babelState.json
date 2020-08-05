@@ -7,8 +7,16 @@
           "stage": "develop",
           "options": {
             "plugins": [],
-            "displayName": true,
+            "displayName": false,
             "ssr": false
+          }
+        },
+        {
+          "name": "babel-plugin-import",
+          "options": {
+            "libraryName": "antd",
+            "libraryDirectory": "es",
+            "style": "css"
           }
         },
         {
@@ -40,6 +48,14 @@
     "develop-html": {
       "plugins": [
         {
+          "name": "babel-plugin-import",
+          "options": {
+            "libraryName": "antd",
+            "libraryDirectory": "es",
+            "style": "css"
+          }
+        },
+        {
           "name": "/home/vinicius/code/mysite/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
           "options": {}
         },
@@ -56,7 +72,7 @@
           "stage": "develop-html",
           "options": {
             "plugins": [],
-            "displayName": true,
+            "displayName": false,
             "ssr": false
           }
         }
@@ -77,6 +93,14 @@
     "build-html": {
       "plugins": [
         {
+          "name": "babel-plugin-import",
+          "options": {
+            "libraryName": "antd",
+            "libraryDirectory": "es",
+            "style": "css"
+          }
+        },
+        {
           "name": "/home/vinicius/code/mysite/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
           "options": {}
         },
@@ -93,7 +117,7 @@
           "stage": "build-html",
           "options": {
             "plugins": [],
-            "displayName": true,
+            "displayName": false,
             "ssr": true
           }
         }
@@ -114,6 +138,14 @@
     "build-javascript": {
       "plugins": [
         {
+          "name": "babel-plugin-import",
+          "options": {
+            "libraryName": "antd",
+            "libraryDirectory": "es",
+            "style": "css"
+          }
+        },
+        {
           "name": "/home/vinicius/code/mysite/node_modules/@babel/plugin-proposal-optional-chaining/lib/index.js",
           "options": {}
         },
@@ -130,7 +162,7 @@
           "stage": "build-javascript",
           "options": {
             "plugins": [],
-            "displayName": true,
+            "displayName": false,
             "ssr": true
           }
         }

@@ -9,21 +9,6 @@ module.exports = {
       "path": "/",
       "name": "Home",
     },
-    // {
-    //   "type": "link",
-    //   "path": "/about",
-    //   "name": "Sobre mim"
-    // },
-    {
-      "type": "anchor",
-      "path": null,
-      "name": "Competências",
-    },
-    {
-      "type": "anchor",
-      "path": "contact",
-      "name": "Contato",
-    },
     {
       "type": "drop",
       "path": null,
@@ -42,6 +27,21 @@ module.exports = {
           "name": "E-commerce Avec",  
         }
       ]
+    },
+    // {
+    //   "type": "link",
+    //   "path": "/about",
+    //   "name": "Sobre mim"
+    // },
+    {
+      "type": "anchor",
+      "path": "skills",
+      "name": "Competências",
+    },
+    {
+      "type": "anchor",
+      "path": "contact",
+      "name": "Contato",
     }
   ]
 }

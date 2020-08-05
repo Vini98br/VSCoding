@@ -5,17 +5,16 @@ import { graphql, useStaticQuery } from "gatsby";
 import Helmet from "react-helmet";
 import { Container, Content } from './styles';
 import { createGlobalStyle } from "styled-components";
-import theme, {ThemeType} from "../../styles/theme";
 
-export const GlobalStyle = createGlobalStyle<{theme: ThemeType}>`
+export const GlobalStyle = createGlobalStyle`
   * {
     margin:0;
     padding: 0;
     box-sizing: border-box;
   }
 
-  h2, p{
-    font-family: ${({theme}) => theme.fontFamily};
+  h2, p, body, input, button {
+    font-family: ${props => props.theme.fontFamily};
   }
 `;
 
@@ -48,14 +47,14 @@ const Layout = ({children, pages, projects, offsets}) => {
   const parallax = useRef(null);
   return (
     <>
-      <GlobalStyle theme={theme} />
-        <Container pages={pages} scrolling ref={parallax}>
-          <Header menuLinks={menuLinks} parallaxRef={parallax} projects={projects} offsets={offsets}/>
-          <Content>
-            {children}
-          </Content>
-          {/* <Footer /> */}
-        </Container>
+      <GlobalStyle />
+      <Container pages={pages} scrolling ref={parallax}>
+        <Header menuLinks={menuLinks} parallaxRef={parallax} projects={projects} offsets={offsets}/>
+        <Content>
+          {children}
+        </Content>
+        {/* <Footer /> */}
+      </Container>
     </>
     
   );

@@ -11,9 +11,6 @@ module.exports = [{
       plugin: require('../node_modules/gatsby-plugin-canonical-urls/gatsby-browser.js'),
       options: {"plugins":[],"siteUrl":"https://www.vscoding.com.br"},
     },{
-      plugin: require('../node_modules/gatsby-plugin-anchor-links/gatsby-browser.js'),
-      options: {"plugins":[],"offset":-100},
-    },{
       plugin: require('../gatsby-browser.js'),
       options: {"plugins":[]},
     }]

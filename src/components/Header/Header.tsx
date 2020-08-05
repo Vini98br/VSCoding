@@ -1,13 +1,14 @@
 import React, { useMemo } from 'react';
-import { AnchorLink } from "gatsby-plugin-anchor-links";
-import { Button , Menu, MenuItem, Fade } from "@material-ui/core";
-import { StyledListItem, StyledUL, StyledLink } from './styles';
+import { Menu } from 'antd';
+import { StyledLink, StyledMenu, StyledItem, StyledSubMenu, HeaderWrapper, StyledMenuIcon } from './styles';
 import { IProject } from "../../pages/index";
+
+const { Item } = Menu;
 export interface MenuLink {
   name: string;
   type: "link" | "anchor" | "drop";
   path?: string;
-  items?: any[],
+  items?: MenuLink[],
 }
 
 export interface HeaderProps{
@@ -18,13 +19,7 @@ export interface HeaderProps{
 }
 
 const Header = ({menuLinks, parallaxRef, projects, offsets}: HeaderProps) => {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
-  const isSM = window && window.matchMedia('(max-height: 667px)').matches;
-
-  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
+  const isSM = typeof window !== `undefined` && window.matchMedia('(max-height: 667px)').matches;
 
   const getScrollOffset = (i: number) => {
     if(Number.isInteger(projects[i].offset)){  
@@ -43,44 +38,36 @@ const Header = ({menuLinks, parallaxRef, projects, offsets}: HeaderProps) => {
 
   const handleItemClick = (i: number) => {
     parallaxRef?.current.scrollTo(getScrollOffset(i));
-    setAnchorEl(null);
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  const handleAnchorClick = (menuLink: MenuLink) => {
+    parallaxRef?.current.scrollTo(isSM ? offsets[menuLink.path].sm : offsets[menuLink.path].md - 0.1);
+  }
 
   return (
-    <nav>
-      <StyledUL>
+    <HeaderWrapper>
+      <StyledMenuIcon />
+      <StyledMenu mode="horizontal" selectedKeys={[]}>
         {menuLinks.map((menuLink: MenuLink) => (
-          <StyledListItem>
-          {menuLink.type === 'anchor' ?
-            <button >{menuLink.name}</button>
+          menuLink.type === 'anchor' ?
+            <StyledItem key={menuLink.path} onClick={() => handleAnchorClick(menuLink)} >
+              {menuLink.name}
+            </StyledItem>
           : menuLink.type === "link" ?
-            <StyledLink to={menuLink.path}>{menuLink.name}</StyledLink>
-          :
-            <>
-             <Button aria-controls="fade-menu" aria-haspopup="true" onMouseEnter={handleClick}>
+            <StyledItem>
+              <StyledLink to={menuLink.path}>
                 {menuLink.name}
-              </Button>
-              <Menu
-                id="fade-menu"
-                anchorEl={anchorEl}
-                onMouseOut={handleClose}
-                open={open}
-                TransitionComponent={Fade}
-              >
-                {menuLink?.items?.map((subLink: MenuLink, i: number) => (
-                  <MenuItem onClick={() => handleItemClick(i)}>{subLink.name}</MenuItem>
-                ))}
-              </Menu>
-            </>
-          }
-          </StyledListItem>
+              </StyledLink>
+            </StyledItem>
+          : 
+          <StyledSubMenu key={menuLink.name} title={menuLink.name}>
+            {menuLink.items.map((obj, i) => (
+              <Item key={obj.name} onClick={() => handleItemClick(i)}>{obj.name}</Item>
+            ))}
+          </StyledSubMenu>
         ))}
-      </StyledUL>
-    </nav>
+      </StyledMenu>
+    </HeaderWrapper>
   );
 }
 

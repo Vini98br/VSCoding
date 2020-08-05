@@ -89,13 +89,17 @@ export interface IProject {
 export default function Home() {
   const { t, i18n } = useTranslation();
   const { images, projects, skills } = useHomeData();
-  const isSM = window && window.matchMedia('(max-height: 667px)').matches;
+  const isSM = typeof window !== `undefined` && window.matchMedia('(max-height: 667px)').matches;
   const pages = isSM ? 6 : 5;
   const offsets = {
-    contact: 3.3,
-    smContact: 4,
-    skills: 2.5,
-    smSkills: 3.2
+    contact:{
+      md: 3.3,
+      sm: 4,
+    },
+    skills: {
+      md: 2.5,
+      sm: 3.2
+    }
   };
 
   return(
@@ -119,13 +123,13 @@ export default function Home() {
             <Project project={project} index={i} />
           </StyledParallaxLayer>
         ))} 
-        <StyledParallaxLayer invert factor={isSM ? 1.1 : 0.8} offset={isSM ? offsets.smSkills : offsets.skills} speed={0.7}>
+        <StyledParallaxLayer invert factor={isSM ? 1.1 : 0.8} offset={isSM ? offsets.skills.sm : offsets.skills.md} speed={0.7}>
           <Skills skills={skills} />
         </StyledParallaxLayer>
-        <StyledParallaxLayer factor={isSM ? 1.1 : 0.8} offset={isSM ? offsets.smContact : offsets.contact} speed={0.7}>
+        <StyledParallaxLayer factor={isSM ? 1.1 : 0.8} offset={isSM ? offsets.contact.sm : offsets.contact.md} speed={0.7}>
           <ContactForm />
         </StyledParallaxLayer>
-        {images.filter(image => image.node.name[0] !== '_' ).map((obj, i) => (
+        {images.filter((image: any) => image.node.name[0] !== '_' ).map((obj: any, i: number) => (
           <div id={obj.node.id} >
             <ParallaxLayer speed={-0.1} offset={(i * 0.6) + 0.5}>
               <StyledLogo src={obj.node.publicURL} alt={obj.node.name} style={{position:'absolute', right:getIntRandomNumber(50,900),opacity: 0.2}}/> 
