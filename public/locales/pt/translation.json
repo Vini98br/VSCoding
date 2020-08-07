@@ -33,7 +33,7 @@
           "link": "https://br.wordpress.org/"
         }
       ],
-      "imagesDirectory":"Folder name"
+      "imagesDirectory":"porte"
     },
     {
       "title": "Aplicativo Hipátia",
@@ -62,7 +62,7 @@
           "link": "https://www.mongodb.com/"
         }
       ],
-      "imagesDirectory":"Folder name"
+      "imagesDirectory":"hipatia"
     },
     {
       "title": "Checkout e Dashboard AVEC",
@@ -79,7 +79,7 @@
           "link": "https://reactjs.org/"
         }
       ],
-      "imagesDirectory":"Folder name"
+      "imagesDirectory":"avec"
     }
   ],
   "skills":[
@@ -92,7 +92,7 @@
       "rate": 0.90
     },
     {
-      "name": "HTML CSS",
+      "name": "HTML, CSS",
       "rate": 0.90
     },
     {
@@ -116,15 +116,15 @@
       "rate": 0.50
     },
     {
-      "name": "Laravel PHP",
+      "name": "Laravel, PHP",
       "rate": 0.40
     },
     {
-      "name": "C C++",
+      "name": "C, C++",
       "rate": 0.40
     },
     {
-      "name": "Java C#",
+      "name": "Java, C#",
       "rate": 0.30
     }
   ]

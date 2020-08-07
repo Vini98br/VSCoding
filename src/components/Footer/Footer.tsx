@@ -1,12 +1,18 @@
 import React from 'react';
+import { ParallaxLayer } from 'react-spring/renderprops-addons';
 
-// import { Container } from './styles';
+import { StyledParallaxLayer } from './styles';
 
-const Footer: React.FC = () => {
+export interface FooterProps {
+  pages: number;
+}
+
+const Footer: React.FC<FooterProps> = ({pages}) => {
   return (
-    <div>
-      footer
-    </div>
+    <StyledParallaxLayer factor={0.05} offset={pages - 0.1}>
+      © Copyright 2020
+      <p>icones</p>
+    </StyledParallaxLayer>
   );
 }
 

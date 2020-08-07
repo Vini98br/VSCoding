@@ -1,8 +1,8 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Menu } from 'antd';
-import { StyledLink, StyledMenu, StyledItem, StyledSubMenu, HeaderWrapper, StyledMenuIcon } from './styles';
+import { StyledLink, StyledMenu, StyledItem, StyledSubMenu, HeaderWrapper, StyledMenuIcon, StyledDrawer } from './styles';
 import { IProject } from "../../pages/index";
-
+import LangSwitcher from "../LangSwitcher/LangSwitcher";
 const { Item } = Menu;
 export interface MenuLink {
   name: string;
@@ -19,6 +19,7 @@ export interface HeaderProps{
 }
 
 const Header = ({menuLinks, parallaxRef, projects, offsets}: HeaderProps) => {
+  const [showDrawer, setShowDrawer] = useState(false);
   const isSM = typeof window !== `undefined` && window.matchMedia('(max-height: 667px)').matches;
 
   const getScrollOffset = (i: number) => {
@@ -36,37 +37,79 @@ const Header = ({menuLinks, parallaxRef, projects, offsets}: HeaderProps) => {
     }
   };
 
-  const handleItemClick = (i: number) => {
+  const handleItemClick = (i: number, isDrawer: boolean) => {
+    if(isDrawer)
+      setShowDrawer(false);
     parallaxRef?.current.scrollTo(getScrollOffset(i));
   };
 
-  const handleAnchorClick = (menuLink: MenuLink) => {
+  const handleLinkClick = (e: React.MouseEvent, menuLink: MenuLink, isDrawer: boolean) => {
+    e.preventDefault();
+    if(isDrawer)
+      setShowDrawer(false);
+  }
+
+  const handleAnchorClick = (menuLink: MenuLink, isDrawer: boolean) => {
+    if(isDrawer)
+      setShowDrawer(false);
     parallaxRef?.current.scrollTo(isSM ? offsets[menuLink.path].sm : offsets[menuLink.path].md - 0.1);
+  }
+
+  const handleMenuClick = () => {
+    setShowDrawer(true);
+  }
+
+  const onClose = () => {
+    setShowDrawer(false);
   }
 
   return (
     <HeaderWrapper>
-      <StyledMenuIcon />
+      <StyledMenuIcon onClick={handleMenuClick} />
       <StyledMenu mode="horizontal" selectedKeys={[]}>
+        <LangSwitcher theme='light' />
         {menuLinks.map((menuLink: MenuLink) => (
           menuLink.type === 'anchor' ?
-            <StyledItem key={menuLink.path} onClick={() => handleAnchorClick(menuLink)} >
+            <StyledItem key={menuLink.path} onClick={() => handleAnchorClick(menuLink, false)} >
               {menuLink.name}
             </StyledItem>
           : menuLink.type === "link" ?
             <StyledItem>
-              <StyledLink to={menuLink.path}>
+              <StyledLink onClick={(e) => handleLinkClick(e, menuLink, false)} to={menuLink.path}>
                 {menuLink.name}
               </StyledLink>
             </StyledItem>
           : 
           <StyledSubMenu key={menuLink.name} title={menuLink.name}>
             {menuLink.items.map((obj, i) => (
-              <Item key={obj.name} onClick={() => handleItemClick(i)}>{obj.name}</Item>
+              <Item key={obj.name} onClick={() => handleItemClick(i, false)}>{obj.name}</Item>
             ))}
           </StyledSubMenu>
         ))}
       </StyledMenu>
+      <StyledDrawer onClose={onClose} visible={showDrawer} placement='left' title='Menu' keyboard>
+        <LangSwitcher theme='dark'/>
+        <StyledMenu mode='inline' selectedKeys={[]}>
+        {menuLinks.map((menuLink: MenuLink) => (
+          menuLink.type === 'anchor' ?
+            <StyledItem key={menuLink.path} onClick={() => handleAnchorClick(menuLink, true)} >
+              {menuLink.name}
+            </StyledItem>
+          : menuLink.type === "link" ?
+            <StyledItem>
+              <StyledLink onClick={(e) => handleLinkClick(e, menuLink, true)} to={menuLink.path}>
+                {menuLink.name}
+              </StyledLink>
+            </StyledItem>
+          : 
+          <StyledSubMenu key={menuLink.name} title={menuLink.name}>
+            {menuLink.items.map((obj, i) => (
+              <Menu.Item key={obj.name} onClick={() => handleItemClick(i, true)}>{obj.name}</Menu.Item>
+            ))}
+          </StyledSubMenu>
+        ))}
+      </StyledMenu>
+      </StyledDrawer>
     </HeaderWrapper>
   );
 }

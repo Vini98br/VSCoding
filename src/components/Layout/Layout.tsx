@@ -53,7 +53,7 @@ const Layout = ({children, pages, projects, offsets}) => {
         <Content>
           {children}
         </Content>
-        {/* <Footer /> */}
+        <Footer pages={pages} />
       </Container>
     </>
     

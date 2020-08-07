@@ -111,12 +111,6 @@ export default function Home() {
         <meta name="description" content="Vs coding is simple website as portfólio to show all projects i`ve made."></meta>
       </Helmet>
       <Layout pages={pages} projects={projects} offsets={offsets}>
-          <button onClick={(e)=>{
-            e.preventDefault()
-            i18n.changeLanguage('pt')}}>pt</button>
-          <button onClick={(e)=>{
-            e.preventDefault()
-            i18n.changeLanguage('en')}}>en</button>
         {projects.map((project: IProject, i: number) => (
           <StyledParallaxLayer invert={i % 2 !== 0} factor={isSM ? 1.2 : 0.8} offset={isSM ? project.smOffset : project.offset} speed={0.7}>
             <StyledMainImage src={project.mainImagePath} alt={project.title}/>
@@ -126,7 +120,7 @@ export default function Home() {
         <StyledParallaxLayer invert factor={isSM ? 1.1 : 0.8} offset={isSM ? offsets.skills.sm : offsets.skills.md} speed={0.7}>
           <Skills skills={skills} />
         </StyledParallaxLayer>
-        <StyledParallaxLayer factor={isSM ? 1.1 : 0.8} offset={isSM ? offsets.contact.sm : offsets.contact.md} speed={0.7}>
+        <StyledParallaxLayer factor={isSM ? 1.1 : 0.99} offset={isSM ? offsets.contact.sm : offsets.contact.md} speed={0.7}>
           <ContactForm />
         </StyledParallaxLayer>
         {images.filter((image: any) => image.node.name[0] !== '_' ).map((obj: any, i: number) => (

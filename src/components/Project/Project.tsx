@@ -3,6 +3,7 @@ import { IProject } from "../../pages/index";
 import Tooltip from "../Tooltip/Tooltip";
 import { useTranslation } from "react-i18next";
 import { ProjectDescription, ProjectTitle, Divider, AvailableOn, Techs, LittleLogo, Container} from './styles';
+import { useStaticQuery, graphql } from 'gatsby';
 
 interface ProjectComponentProps {
   project: IProject
@@ -11,6 +12,20 @@ interface ProjectComponentProps {
 
 const ProjectComponent: React.FC<ProjectComponentProps> = ({project, index}) => {
   const { t } = useTranslation();
+  // const { allFile } = useStaticQuery(
+  //   graphql`
+  //   {
+  //     allFile(filter: {relativeDirectory: {eq: ${project.imagesDirectory} }}) {
+  //       edges {
+  //         node {
+  //           id
+  //           name
+  //         }
+  //       }
+  //     }
+  //   }
+  //   `
+  // );
   return (
     <Container invert={index % 2 !== 0}>
       <ProjectTitle>{t(`projects.${index}.title`)}</ProjectTitle>
