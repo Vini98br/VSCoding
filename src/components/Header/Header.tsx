@@ -3,10 +3,13 @@ import { Menu } from 'antd';
 import { StyledLink, StyledMenu, StyledItem, StyledSubMenu, HeaderWrapper, StyledMenuIcon, StyledDrawer } from './styles';
 import { IProject } from "../../pages/index";
 import LangSwitcher from "../LangSwitcher/LangSwitcher";
+import { useTranslation } from 'react-i18next';
 const { Item } = Menu;
+
 export interface MenuLink {
   name: string;
   type: "link" | "anchor" | "drop";
+  identifier?: string;
   path?: string;
   items?: MenuLink[],
 }
@@ -21,7 +24,7 @@ export interface HeaderProps{
 const Header = ({menuLinks, parallaxRef, projects, offsets}: HeaderProps) => {
   const [showDrawer, setShowDrawer] = useState(false);
   const isSM = typeof window !== `undefined` && window.matchMedia('(max-height: 667px)').matches;
-
+  const { t } = useTranslation();
   const getScrollOffset = (i: number) => {
     if(Number.isInteger(projects[i].offset)){  
       if(isSM)
@@ -71,16 +74,16 @@ const Header = ({menuLinks, parallaxRef, projects, offsets}: HeaderProps) => {
         {menuLinks.map((menuLink: MenuLink) => (
           menuLink.type === 'anchor' ?
             <StyledItem key={menuLink.path} onClick={() => handleAnchorClick(menuLink, false)} >
-              {menuLink.name}
+              {t(menuLink.identifier)}
             </StyledItem>
           : menuLink.type === "link" ?
             <StyledItem>
               <StyledLink onClick={(e) => handleLinkClick(e, menuLink, false)} to={menuLink.path}>
-                {menuLink.name}
+                {t(menuLink.identifier)}
               </StyledLink>
             </StyledItem>
           : 
-          <StyledSubMenu key={menuLink.name} title={menuLink.name}>
+          <StyledSubMenu key={menuLink.name} title={t(menuLink.identifier)}>
             {menuLink.items.map((obj, i) => (
               <Item key={obj.name} onClick={() => handleItemClick(i, false)}>{obj.name}</Item>
             ))}
@@ -93,16 +96,16 @@ const Header = ({menuLinks, parallaxRef, projects, offsets}: HeaderProps) => {
         {menuLinks.map((menuLink: MenuLink) => (
           menuLink.type === 'anchor' ?
             <StyledItem key={menuLink.path} onClick={() => handleAnchorClick(menuLink, true)} >
-              {menuLink.name}
+              {t(menuLink.identifier)}
             </StyledItem>
           : menuLink.type === "link" ?
             <StyledItem>
               <StyledLink onClick={(e) => handleLinkClick(e, menuLink, true)} to={menuLink.path}>
-                {menuLink.name}
+                {t(menuLink.identifier)}
               </StyledLink>
             </StyledItem>
           : 
-          <StyledSubMenu key={menuLink.name} title={menuLink.name}>
+          <StyledSubMenu key={menuLink.name} title={t(menuLink.identifier)}>
             {menuLink.items.map((obj, i) => (
               <Menu.Item key={obj.name} onClick={() => handleItemClick(i, true)}>{obj.name}</Menu.Item>
             ))}

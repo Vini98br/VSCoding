@@ -96,7 +96,7 @@ export const StyledMenu = styled(Menu)`
     background-color: unset;
     display: ${props => props.mode === 'horizontal' ? 'flex' : 'unset'};
     justify-content: ${props => props.mode === 'horizontal' ? 'flex-end' : 'unset'};
-    align-items: center;
+    align-items: baseline;
     padding-left: 20px;
     div{
       margin-right: ${props => props.mode === 'horizontal' ? 'auto' : 'unset'};

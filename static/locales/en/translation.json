@@ -1,5 +1,8 @@
 {
+  "home": "Home",
   "skillSectionTitle": "Skills",
+  "projectsSectionTitle": "Projects",
+  "contactSectionTitle": "Contact",
   "getInTouch": "Get in Touch",
   "namePlaceholder": "Enter your name",
   "nameLabel": "Name",
@@ -77,6 +80,12 @@
           "logoPath": "/images/logos/react.png",
           "description": "React Js",
           "link": "https://reactjs.org/"
+        },
+        {
+          "name":"Sydle one",
+          "logoPath": "/images/logos/_sydleOne.png",
+          "description": "SYDLE ONE é uma plataforma low-code e BaaS (Backend as a Service) internamente utiliza Java e Angular, e oferece a possibilidade de injeção de scripts via RHINO. Por meio deste que foram geradas as API às quais foram consumidas pela aplicação em ReactJs.",
+          "link": "https://www.sydle.com/br/"
         }
       ],
       "imagesDirectory":"avec"

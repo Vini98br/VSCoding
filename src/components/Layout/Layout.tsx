@@ -13,6 +13,14 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  body {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
+  html {
+    height: -webkit-fill-available;
+  }
+
   h2, p, body, input, button {
     font-family: ${props => props.theme.fontFamily};
   }
@@ -25,9 +33,14 @@ const useSiteMetadata = () => {
         site {
           siteMetadata {
             title
+            social {
+              name
+              link
+            }
             menuLinks {
               name
               type
+              identifier
               path
               items{
                 name
@@ -43,7 +56,7 @@ const useSiteMetadata = () => {
 }
 
 const Layout = ({children, pages, projects, offsets}) => {
-  const { menuLinks } = useSiteMetadata(); 
+  const { menuLinks, social } = useSiteMetadata(); 
   const parallax = useRef(null);
   return (
     <>
@@ -53,7 +66,7 @@ const Layout = ({children, pages, projects, offsets}) => {
         <Content>
           {children}
         </Content>
-        <Footer pages={pages} />
+        <Footer pages={pages} social={social} />
       </Container>
     </>
     
