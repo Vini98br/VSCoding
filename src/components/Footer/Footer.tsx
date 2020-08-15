@@ -2,6 +2,7 @@ import React from 'react';
 import { ParallaxLayer } from 'react-spring/renderprops-addons';
 import { GithubOutlined, LinkedinOutlined, InstagramOutlined } from "@ant-design/icons";
 import { StyledParallaxLayer, IconsWrapper, Copyright, IconButton } from './styles';
+import useMedia from '../../hooks/useMedia';
 
 interface Social {
   name: string;
@@ -14,15 +15,17 @@ export interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({pages, social}) => {
+  const { height, width } = useMedia();
+  const isSM = height <= 667 || width <= 768;
+
   const logos = {
     GitHub: <GithubOutlined style={{fontSize: '18px'}}/>,
     Linkedin: <LinkedinOutlined style={{fontSize: '18px'}}/>,
     Instagram: <InstagramOutlined style={{fontSize: '18px'}}/>
   };
-  console.log(social)
 
   return (
-    <StyledParallaxLayer factor={0.05} offset={pages - 0.1}>
+    <StyledParallaxLayer factor={isSM ? 0.1 : 0.05} offset={isSM ? pages - 0.22 : pages - 0.16}>
       <Copyright>Copyright © 2020. All rights reserved.</Copyright>
       <IconsWrapper>
         {social.map(item => (

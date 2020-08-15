@@ -8,6 +8,10 @@ export const StyledParallaxLayer = styled(ParallaxLayer)`
   justify-content: space-between;
   align-items: center;
   padding: 0 130px;
+  @media (max-width: 768px){
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
 `;
 
 export const IconsWrapper = styled.div`

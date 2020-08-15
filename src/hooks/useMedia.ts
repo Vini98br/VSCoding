@@ -20,4 +20,7 @@ export default function useMedia() {
     // Return both the height and width
     return { width, height };
   }
+  else{
+    return {width: 1000, height: 1000}
+  }
 }
