@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 export const ProjectTitle = styled.h2`
   font-size: 18px;
@@ -47,6 +48,54 @@ export const LittleLogo = styled.img`
   cursor: pointer;
 `;
 
+export const FeaturedImagesWrapper = styled.div`
+  margin-top: 20px;
+  width: auto;
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px;
+  grid-column-gap: 13px;
+  grid-template-areas: "img img img sm";
+  @media screen and (min-width: 425px) and (max-width:659px){
+    img :last-of-type {
+      display: none;
+    }
+    grid-template-columns: 100px 100px 100px;
+    grid-template-areas: "img img sm";
+  }
+  @media screen and (max-width: 424px){
+    img :nth-last-child(n+3) {
+      display: none;
+    }
+    grid-template-columns: 100px 100px;
+    grid-template-areas: "img sm";
+  }
+`;
+
+export const FeaturedImage = styled.img`
+  grid-area: "img";
+  width: 100px;
+  height: 100px;
+  border-radius: 2px;
+`;
+
+export const SeeMore = styled(Link)`
+  && {
+    grid-area: "sm";
+    width: min-content;
+    width: 100px;
+    height: 100px;
+    border-radius: 2px;
+  }
+  div {
+    word-wrap: break-word;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+`;
+
 export const Container = styled.div<{invert?: boolean}>`
   margin-right:100px;
   width: 100%;
@@ -54,6 +103,10 @@ export const Container = styled.div<{invert?: boolean}>`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  ${SeeMore}{
+    background-color: ${props => props.invert ? props.theme.colors.foreground : props.theme.colors.currentLine}c2;
+    color: ${props => props.invert ? props.theme.colors.currentLine : props.theme.colors.foreground};
+  }
   @media screen and (min-width:1081px){
     margin-right:${props => props.invert ? 'unset' : '100px'};;
     margin-left:${props => props.invert ? '100px' : 'unset'};

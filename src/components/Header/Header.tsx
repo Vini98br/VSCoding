@@ -4,6 +4,7 @@ import { StyledLink, StyledMenu, StyledItem, StyledSubMenu, HeaderWrapper, Style
 import { IProject } from "../../pages/index";
 import LangSwitcher from "../LangSwitcher/LangSwitcher";
 import { useTranslation } from 'react-i18next';
+import useMedia from '../../hooks/useMedia';
 const { Item } = Menu;
 
 export interface MenuLink {
@@ -23,7 +24,8 @@ export interface HeaderProps{
 
 const Header = ({menuLinks, parallaxRef, projects, offsets}: HeaderProps) => {
   const [showDrawer, setShowDrawer] = useState(false);
-  const isSM = typeof window !== `undefined` && window.matchMedia('(max-height: 667px)').matches;
+  const { height, width } = useMedia();
+  const isSM = height <= 667 || width <= 960;
   const { t } = useTranslation();
   const getScrollOffset = (i: number) => {
     if(Number.isInteger(projects[i].offset)){  
@@ -74,11 +76,13 @@ const Header = ({menuLinks, parallaxRef, projects, offsets}: HeaderProps) => {
         {menuLinks.map((menuLink: MenuLink) => (
           menuLink.type === 'anchor' ?
             <StyledItem key={menuLink.path} onClick={() => handleAnchorClick(menuLink, false)} >
-              {t(menuLink.identifier)}
+              <StyledLink to={'/'}>
+                {t(menuLink.identifier)}
+              </StyledLink>
             </StyledItem>
           : menuLink.type === "link" ?
-            <StyledItem>
-              <StyledLink onClick={(e) => handleLinkClick(e, menuLink, false)} to={menuLink.path}>
+            <StyledItem onClick={(e) => handleLinkClick(e.domEvent, menuLink, false)}>
+              <StyledLink to={menuLink.path}>
                 {t(menuLink.identifier)}
               </StyledLink>
             </StyledItem>
@@ -99,8 +103,8 @@ const Header = ({menuLinks, parallaxRef, projects, offsets}: HeaderProps) => {
               {t(menuLink.identifier)}
             </StyledItem>
           : menuLink.type === "link" ?
-            <StyledItem>
-              <StyledLink onClick={(e) => handleLinkClick(e, menuLink, true)} to={menuLink.path}>
+            <StyledItem onClick={(e) => handleLinkClick(e.domEvent, menuLink, true)}>
+              <StyledLink to={menuLink.path}>
                 {t(menuLink.identifier)}
               </StyledLink>
             </StyledItem>

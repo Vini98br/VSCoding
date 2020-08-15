@@ -1,12 +1,22 @@
 import styled from 'styled-components';
 
 export const SkillsWrapper = styled.div`
-  display: flex;
+  /* display: flex;
   flex-flow: column wrap;
-  width: 100%;
   height: 100%;
+  */
   padding: 0 70px;
-  margin-top: 10px;
+  margin-top: 10px; 
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(6,1fr);
+  grid-auto-flow: column;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(11,1fr);
+
+  }
 `;
 
 export const SkillsTitle = styled.h2`
@@ -17,7 +27,7 @@ export const SkillsTitle = styled.h2`
 export const Skill = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 100%;
   padding: 25px 60px 15px 10px;
 `;
 

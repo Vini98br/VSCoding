@@ -14,8 +14,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    min-height: 100%;
-    /* min-height: -webkit-fill-available; */
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
   }
   html {
     height: -webkit-fill-available;
@@ -24,6 +24,22 @@ export const GlobalStyle = createGlobalStyle`
   h2, p, body, input, button {
     font-family: ${props => props.theme.fontFamily};
   }
+
+  /* ::-webkit-scrollbar {
+    width: 15px;
+    height: 30px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg,#fff,${props => props.theme.colors.green});
+    border-radius: 30px;
+    box-shadow: inset 2px 2px 2px hsla(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    background: linear-gradient(90deg,${props => props.theme.colors.background},${props => props.theme.colors.background} 1px,${props => props.theme.colors.background} 0,${props => props.theme.colors.background});
+  } */
 `;
 
 const useSiteMetadata = () => {
@@ -55,7 +71,13 @@ const useSiteMetadata = () => {
   return site.siteMetadata;
 }
 
-const Layout = ({children, pages, projects, offsets}) => {
+export interface LayoutProps {
+  pages: any;
+  projects?: any; 
+  offsets?: any;
+}
+
+const Layout: React.FC<LayoutProps> = ({children, pages, projects, offsets}) => {
   const { menuLinks, social } = useSiteMetadata(); 
   const parallax = useRef(null);
   return (

@@ -28,8 +28,15 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `locales`,
-        path: `${__dirname}/static/locales`,
+        name: `projects`,
+        path: `${__dirname}/static/locales/pt/projects.json`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `skills`,
+        path: `${__dirname}/static/locales/pt/skills.json`,
       },
     },
     {

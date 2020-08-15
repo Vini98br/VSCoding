@@ -26,7 +26,7 @@ const Footer: React.FC<FooterProps> = ({pages, social}) => {
       <Copyright>Copyright © 2020. All rights reserved.</Copyright>
       <IconsWrapper>
         {social.map(item => (
-          <IconButton icon={logos[`${item.name}`]} shape='circle' onClick={() => window.open(item.link, '_blank')}/>
+          <IconButton key={item.name} icon={logos[`${item.name}`]} shape='circle' onClick={() => window.open(item.link, '_blank')}/>
         ))}
       </IconsWrapper>
     </StyledParallaxLayer>

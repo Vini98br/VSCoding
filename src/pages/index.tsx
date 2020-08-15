@@ -14,13 +14,15 @@ import {
   StyledLogo,
   StyledMainImage
 } from "./styles";
+import { object } from "yup";
+import useMedia from "../hooks/useMedia";
 
 const getIntRandomNumber = (min: number, max: number) => {
   return Math.floor(Math.random() * (max - min +1)) + min;
 }
 
 const useHomeData = () => {
-  const { allFile, ptJson } = useStaticQuery(
+  const { allFile, allProjectsJson, allSkillsJson } = useStaticQuery(
     graphql`
       {
         allFile(filter: {extension: {regex: "/(jpg)|(jpeg)|(png)/"}, relativeDirectory: {eq: "logos"}}) {
@@ -32,25 +34,36 @@ const useHomeData = () => {
             }
           }
         }
-        ptJson {
-          projects {
-            title
-            offset
-            smOffset
-            mainImagePath
-            description
-            imagesDirectory
-            link
-            techs {
-              description
-              link
+        allSkillsJson {
+          edges {
+            node {
               name
-              logoPath
+              rate
             }
           }
-          skills {
-            name
-            rate
+        }
+        allProjectsJson {
+          edges {
+            node {
+              description
+              featuredImages {
+                name
+                path
+              }
+              id
+              imagesDirectory
+              link
+              mainImagePath
+              offset
+              smOffset
+              techs {
+                description
+                link
+                name
+                logoPath
+              }
+              title
+            }
           }
         }
       }
@@ -58,8 +71,8 @@ const useHomeData = () => {
   );
   return {
     images: allFile.edges, 
-    projects: ptJson.projects,
-    skills: ptJson.skills
+    projects: allProjectsJson.edges.map(obj => obj.node),
+    skills: allSkillsJson.edges.map(obj => obj.node)
   };
 }
 
@@ -80,6 +93,10 @@ export interface IProject {
   imagesDirectory: string;
   link: string;
   techs: Tech[];
+  featuredImages: Array<{
+    name: string;
+    path: string;
+  }>
   title: string;
   offset: number;
   smOffset: number;
@@ -87,14 +104,15 @@ export interface IProject {
 }
 
 export default function Home() {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation(['projects', 'translation']);
+  const { height, width } = useMedia();
   const { images, projects, skills } = useHomeData();
-  const isSM = typeof window !== `undefined` && window.matchMedia('(max-height: 667px)').matches;
-  const pages = isSM ? 6 : 5;
+  const isSM = height <= 667 || width <= 960;
+  const pages = isSM ? 7 : 5;
   const offsets = {
     contact:{
       md: 3.3,
-      sm: 4,
+      sm: 4.9,
     },
     skills: {
       md: 2.5,
@@ -117,7 +135,7 @@ export default function Home() {
             <Project project={project} index={i} />
           </StyledParallaxLayer>
         ))} 
-        <StyledParallaxLayer invert factor={isSM ? 1.1 : 0.8} offset={isSM ? offsets.skills.sm : offsets.skills.md} speed={0.7}>
+        <StyledParallaxLayer invert factor={isSM ? 2 : 0.8} offset={isSM ? offsets.skills.sm : offsets.skills.md} speed={0.7}>
           <Skills skills={skills} />
         </StyledParallaxLayer>
         <StyledParallaxLayer factor={isSM ? 1.1 : 0.99} offset={isSM ? offsets.contact.sm : offsets.contact.md} speed={0.7}>

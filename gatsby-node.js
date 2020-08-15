@@ -1,38 +1,48 @@
 const path = require('path');
+exports.onCreateNode = ({ node, actions }) => {
+  const { createNode, createNodeField } = actions;
+  // if(node.internal.type === 'File')
+  //   console.log(JSON.stringify(node, undefined, 4))
+  if(node.internal.type === 'ProjectsJson')
+  console.log(node.imagesDirectory)
+}
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
   const projects = await graphql(`
   {
-    allPtJson {
+    allProjectsJson {
       edges {
         node {
-          projects {
-            title
-            offset
-            smOffset
-            mainImagePath
+          description
+          featuredImages {
+            name
+            path
+          }
+          id
+          imagesDirectory
+          link
+          mainImagePath
+          offset
+          smOffset
+          techs {
             description
             link
-            imagesDirectory
-            techs {
-              name
-              logoPath
-              description
-              link
-            }
+            name
+            logoPath
           }
+          title
         }
       }
     }
   }
   `);
 
-  const projectTemplate = path.resolve(`src/templates/project.tsx`);
+  const projectTemplate = path.resolve(`src/templates/Project.tsx`);
 
-  projects.data.allPtJson.edges[0].node.projects.forEach(project => {
+  projects.data.allProjectsJson.edges.map(obj => obj.node).forEach(project => {
     createPage({
-      path: `/${project.imagesDirectory}/`,
+      path: `/gallery/${project.imagesDirectory}/`,
       component: projectTemplate,
       context:{
         imagesDirectory: project.imagesDirectory
