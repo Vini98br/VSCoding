@@ -8,9 +8,16 @@ export const StyledParallaxLayer = styled(ParallaxLayer)`
   justify-content: space-between;
   align-items: center;
   padding: 0 130px;
-  @media (max-width: 768px){
+  position: absolute;
+  bottom:0;
+  @media (min-width: 425px) and (max-width: 768px){
     flex-direction: column-reverse;
     justify-content: center;
+  }
+  @media (max-width: 424px){
+    flex-direction: column-reverse;
+    justify-content: center;
+    padding: 0 10px;
   }
 `;
 

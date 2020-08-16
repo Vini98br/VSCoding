@@ -3,7 +3,7 @@ import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import { graphql, useStaticQuery } from "gatsby";
 import Helmet from "react-helmet";
-import { Container, Content } from './styles';
+import { Container, Content, Anchor } from './styles';
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
@@ -84,11 +84,13 @@ const Layout: React.FC<LayoutProps> = ({children, pages, projects, offsets}) => 
     <>
       <GlobalStyle />
       <Container pages={pages} scrolling ref={parallax}>
-        <Header menuLinks={menuLinks} parallaxRef={parallax} projects={projects} offsets={offsets}/>
-        <Content>
-          {children}
-        </Content>
-        <Footer pages={pages} social={social} />
+        <Anchor>
+          <Header menuLinks={menuLinks} parallaxRef={parallax} projects={projects} offsets={offsets}/>
+          <Content>
+            {children}
+          </Content>
+          <Footer pages={pages} social={social} />
+        </Anchor>
       </Container>
     </>
     

@@ -10,12 +10,11 @@ export const SkillsWrapper = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(6,1fr);
+  grid-template-rows: repeat(6,100px);
   grid-auto-flow: column;
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(11,1fr);
-
   }
 `;
 

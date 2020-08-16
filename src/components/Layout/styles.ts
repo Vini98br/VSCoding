@@ -10,3 +10,9 @@ export const Container = styled(Parallax)`
 export const Content = styled.div`
   
 `;
+
+export const Anchor = styled.div` 
+  position: relative; 
+  width: 100%;
+  height: 100%;
+`;
