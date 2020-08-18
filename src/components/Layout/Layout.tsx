@@ -13,13 +13,13 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  body {
+  /* body {
     min-height: 100vh;
     min-height: -webkit-fill-available;
   }
   html {
     height: -webkit-fill-available;
-  }
+  } */
 
   h2, p, body, input, button {
     font-family: ${props => props.theme.fontFamily};
