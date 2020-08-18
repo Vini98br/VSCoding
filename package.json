@@ -41,6 +41,7 @@
     "i18next": "^19.6.0",
     "i18next-http-backend": "^1.0.16",
     "react": "^16.12.0",
+    "react-div-100vh": "^0.3.8",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
     "react-hook-form": "^6.1.0",
