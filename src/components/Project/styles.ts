@@ -10,6 +10,7 @@ export const ProjectTitle = styled.h2`
 export const ProjectDescription = styled.p`
   margin-top: 15px;
   color: ${props => props.theme.colors.currentLine};
+  text-align: justify;
 `;
 
 export const Divider = styled.hr`
@@ -53,6 +54,7 @@ export const FeaturedImagesWrapper = styled.div`
   width: auto;
   display: grid;
   grid-template-columns: 100px 100px 100px 100px;
+  grid-template-rows: 100px;
   grid-column-gap: 13px;
   grid-template-areas: "img img img sm";
   @media screen and (min-width: 425px) and (max-width:659px){
@@ -66,24 +68,29 @@ export const FeaturedImagesWrapper = styled.div`
     img :nth-last-child(n+3) {
       display: none;
     }
-    grid-template-columns: 100px 100px;
+    grid-template-columns: 80px 80px;
+    grid-template-rows: 80px;  
     grid-template-areas: "img sm";
   }
 `;
 
 export const FeaturedImage = styled.img`
   grid-area: "img";
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  height: 100%;
   border-radius: 2px;
+  /* @media (max-width: 425px) {
+    width: 80px;
+    height: 80px;
+  } */
 `;
 
 export const SeeMore = styled(Link)`
   && {
     grid-area: "sm";
     width: min-content;
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 100%;
     border-radius: 2px;
   }
   div {
@@ -140,12 +147,11 @@ export const Container = styled.div<{invert?: boolean}>`
     }
   }
   @media screen and (max-width: 424px){
-    padding: 10px 40px;
+    padding: 10px 20px;
     margin-right: unset;
     margin-left:unset;
     ${ProjectDescription} {
       font-size: 13px;
-      text-align: center;
     }
     ${ProjectTitle} {
       font-size: 15px;
