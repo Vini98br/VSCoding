@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons'
 
 export const Container = styled.div`
@@ -14,6 +14,16 @@ export const StyledLogo = styled.img`
   width:300px;
   filter: grayscale(70%) blur(3px);
   z-index:1;
+  @media (min-width: 660px) and (max-width:1080px){
+    width: 200px;
+  }
+  @media (min-width: 425px) and (max-width:659px){
+    width: 170px;
+  }
+  @media (max-width:424px),  (max-height: 768px){
+    width: 150px;
+  }
+
 `;
 
 export const StyledParallaxLayer = styled(ParallaxLayer)<{invert?: boolean}>`
@@ -35,24 +45,15 @@ export const StyledParallaxLayer = styled(ParallaxLayer)<{invert?: boolean}>`
     ${StyledMainImage} {
       width: 400px;
     }
-    ${StyledLogo} {
-      width: 200px;
-    }
   }
   @media screen and (min-width: 425px) and (max-width:659px){
     ${StyledMainImage} {
       width: 300px;
     }
-    ${StyledLogo} {
-      width: 200px;
-    }
   }
   @media screen and (max-width:424px),  (max-height: 768px){
     ${StyledMainImage} {
       width: 200px;
-    }
-    ${StyledLogo} {
-      width: 150px;
     }
   }
   span, p, h2, span a{
@@ -73,3 +74,4 @@ export const Divider = styled.hr`
   width: 25%;
   border: 1px solid ${props => props.theme.colors.currentLine};
 `;
+

@@ -4,7 +4,7 @@ import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons'
 export const Container = styled(Parallax)`
   height: 100vh;
   font-family:${props => props.theme.fontFamily};
-  background-image: url('/images/3.jpeg');
+  background-image: url('/images/7.png');
 `;
 
 export const Content = styled.div`

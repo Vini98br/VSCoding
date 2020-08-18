@@ -16,7 +16,8 @@ export interface FooterProps {
 
 const Footer: React.FC<FooterProps> = ({pages, social}) => {
   const { height, width } = useMedia();
-  const isSM = height <= 667 || width <= 1200;
+  const isSM = height <= 667 || (width > 768 && width <= 1200);
+  const isXS = height <= 500 || width <= 767;
 
   const logos = {
     GitHub: <GithubOutlined style={{fontSize: '18px'}}/>,
@@ -25,7 +26,7 @@ const Footer: React.FC<FooterProps> = ({pages, social}) => {
   };
 
   return (
-    <StyledParallaxLayer factor={isSM ? 0.1 : 0.05} /*offset={isSM ? pages - 0.22 : pages - 0.1}*/>
+    <StyledParallaxLayer factor={isXS ? 0.14 :isSM ? 0.1 : 0.05} /*offset={isSM ? pages - 0.22 : pages - 0.1}*/>
       <Copyright>Copyright © 2020. All rights reserved.</Copyright>
       <IconsWrapper>
         {social.map(item => (

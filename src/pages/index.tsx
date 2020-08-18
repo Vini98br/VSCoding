@@ -144,7 +144,7 @@ export default function Home() {
         {images.filter((image: any) => image.node.name[0] !== '_' ).map((obj: any, i: number) => (
           <div id={obj.node.id} >
             <ParallaxLayer speed={-0.1} offset={(i * 0.6) + 0.5}>
-              <StyledLogo src={obj.node.publicURL} alt={obj.node.name} style={{position:'absolute', right:getIntRandomNumber(50,900),opacity: 0.2}}/> 
+              <StyledLogo src={obj.node.publicURL} alt={obj.node.name} style={{position:'absolute', right: getIntRandomNumber(20,width),opacity: 0.2}}/> 
             </ParallaxLayer>
           </div>
         ))}

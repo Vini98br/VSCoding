@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const ContactTitle = styled.h2`
   font-size: 25px;
@@ -136,6 +136,9 @@ export const RedSpan = styled.span`
 `;
 
 export const SubmitButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
   width: 30%;
   height: 40px;
@@ -159,4 +162,28 @@ export const SubmitButton = styled.button`
     background: #a875f0 radial-gradient(circle, transparent 1%, #a875f0 1%) center/15000%;
     box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
   }
+`;
+
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+export const Loading = styled.div`
+  :after {
+    content: " ";
+    display: block;
+    width: 33px;
+    height: 33px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: ${rotate} 1.2s linear infinite;
+  }
+  transform: ${rotate};
 `;

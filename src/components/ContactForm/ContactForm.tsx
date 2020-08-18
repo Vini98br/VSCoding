@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from "react-i18next";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers';
@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 import * as yup from "yup";
 import { 
   Container, ContactTitle, Input, Form, Divider, TextArea, 
-  Label, FormControl, ErrorMessage, RedSpan, SubmitButton
+  Label, FormControl, ErrorMessage, RedSpan, SubmitButton, Loading
 } from './styles';
 
 interface IFormInputs {
@@ -29,13 +29,16 @@ const schema = yup.object().shape({
 
 const ContactForm: React.FC = () => {
   const { t, i18n } = useTranslation();
+  const [isSendingEmail, setIsSendingEmail] = useState(false);
   const isPT = i18n.language === 'pt';
   const { handleSubmit, register, errors, control } = useForm<IFormInputs>({
     resolver: yupResolver(schema)
   });
   const onSubmit = (data: IFormInputs ) => {
+    setIsSendingEmail(true);
     emailjs.send('my_gmail_service','my_template', data, 'user_kWJIc0v20AkWUP4HXdHeA')
     .then(() => {
+      setIsSendingEmail(false);
       isPT ?
         Swal.fire(
           'E-mail enviado!',
@@ -50,6 +53,7 @@ const ContactForm: React.FC = () => {
         );
 
    }, () => {
+    setIsSendingEmail(false);
     isPT ?
       Swal.fire(
         'Desculpe! :(',
@@ -109,7 +113,7 @@ const ContactForm: React.FC = () => {
           <TextArea ref={register} name='message' id='message' placeholder={t('messagePlaceholder')}/>
           <ErrorMessage>{getFieldError(errors.message, 'message')}</ErrorMessage>
         </FormControl>
-        <SubmitButton type='submit'>{t('Send')}</SubmitButton>
+        <SubmitButton type='submit'>{isSendingEmail ? <Loading/> : t('Send')}</SubmitButton>
       </Form>
     </Container>
   );
