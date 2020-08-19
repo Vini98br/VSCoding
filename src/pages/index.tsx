@@ -138,7 +138,7 @@ export default function Home() {
         <StyledParallaxLayer invert factor={isSM ? 2 : 0.8} offset={isSM ? offsets.skills.sm : offsets.skills.md} speed={0.7}>
           <Skills skills={skills} />
         </StyledParallaxLayer>
-        <StyledParallaxLayer factor={isSM ? 1.1 : 0.99} offset={isSM ? offsets.contact.sm : offsets.contact.md} speed={0.7}>
+        <StyledParallaxLayer factor={isSM ? 1.2 : 0.99} offset={isSM ? offsets.contact.sm : offsets.contact.md} speed={0.7}>
           <ContactForm />
         </StyledParallaxLayer>
         {images.filter((image: any) => image.node.name[0] !== '_' ).map((obj: any, i: number) => (
