@@ -125,7 +125,7 @@ export const StyledMenu = styled(Menu)`
         :last-child{
           border-bottom: unset;
         }
-        color: ${props => props.mode === 'inline' && props.theme.colors.foreground};
+        color: ${props => props.mode === 'inline' ? props.theme.colors.foreground : props.theme.colors.background};
         :hover{
           color: ${props => props.theme.colors.pink};
         }
@@ -133,6 +133,9 @@ export const StyledMenu = styled(Menu)`
     }
     :hover{
       border-bottom: ${props => props.mode === 'inline' && 'none'};
+    }
+    & .ant-menu-submenu-title :active{
+      color: ${props => props.theme.colors.pink};
     }
   }
 `;

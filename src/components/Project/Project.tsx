@@ -32,7 +32,7 @@ const ProjectComponent: React.FC<ProjectComponentProps> = ({project, index}) => 
         ))}
       </Techs>
       <Divider />
-      <FeaturedImagesWrapper>
+      {/* <FeaturedImagesWrapper>
         {project.featuredImages.map(img => (
           <FeaturedImage src={img.path}/>
         ))}
@@ -41,7 +41,7 @@ const ProjectComponent: React.FC<ProjectComponentProps> = ({project, index}) => 
           Ver mais
           </div>
         </SeeMore>
-      </FeaturedImagesWrapper>
+      </FeaturedImagesWrapper> */}
     </Container>
   );
 }

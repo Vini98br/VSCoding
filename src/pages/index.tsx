@@ -136,6 +136,7 @@ export default function Home() {
           </StyledParallaxLayer>
         ))} 
         <StyledParallaxLayer invert factor={isSM ? 2 : 0.8} offset={isSM ? offsets.skills.sm : offsets.skills.md} speed={0.7}>
+          <a id='skills'></a>
           <Skills skills={skills} />
         </StyledParallaxLayer>
         <StyledParallaxLayer factor={isSM ? 1.2 : 0.99} offset={isSM ? offsets.contact.sm : offsets.contact.md} speed={0.7}>

@@ -1,11 +1,10 @@
 import React, { useMemo, useState } from 'react';
-import { Menu } from 'antd';
 import { StyledLink, StyledMenu, StyledItem, StyledSubMenu, HeaderWrapper, StyledMenuIcon, StyledDrawer } from './styles';
 import { IProject } from "../../pages/index";
-import LangSwitcher from "../LangSwitcher/LangSwitcher";
 import { useTranslation } from 'react-i18next';
 import useMedia from '../../hooks/useMedia';
-const { Item } = Menu;
+import Drawer from "./Drawer";
+import Menu from "./Menu";
 
 export interface MenuLink {
   name: string;
@@ -27,6 +26,7 @@ const Header = ({menuLinks, parallaxRef, projects, offsets}: HeaderProps) => {
   const { height, width } = useMedia();
   const isSM = height <= 667 || width <= 960;
   const { t } = useTranslation();
+
   const getScrollOffset = (i: number) => {
     if(Number.isInteger(projects[i].offset)){  
       if(isSM)
@@ -71,52 +71,20 @@ const Header = ({menuLinks, parallaxRef, projects, offsets}: HeaderProps) => {
   return (
     <HeaderWrapper>
       <StyledMenuIcon onClick={handleMenuClick} />
-      <StyledMenu mode="horizontal" selectedKeys={[]}>
-        <LangSwitcher theme='light' />
-        {menuLinks.map((menuLink: MenuLink) => (
-          menuLink.type === 'anchor' ?
-            <StyledItem key={menuLink.path} onClick={() => handleAnchorClick(menuLink, false)} >
-              <StyledLink to={'/'}>
-                {t(menuLink.identifier)}
-              </StyledLink>
-            </StyledItem>
-          : menuLink.type === "link" ?
-            <StyledItem onClick={(e) => handleLinkClick(e.domEvent, menuLink, false)}>
-              <StyledLink to={menuLink.path}>
-                {t(menuLink.identifier)}
-              </StyledLink>
-            </StyledItem>
-          : 
-          <StyledSubMenu key={menuLink.name} title={t(menuLink.identifier)}>
-            {menuLink.items.map((obj, i) => (
-              <Item key={obj.name} onClick={() => handleItemClick(i, false)}>{obj.name}</Item>
-            ))}
-          </StyledSubMenu>
-        ))}
-      </StyledMenu>
-      <StyledDrawer onClose={onClose} visible={showDrawer} placement='left' title='Menu' keyboard>
-        <LangSwitcher theme='dark'/>
-        <StyledMenu mode='inline' selectedKeys={[]}>
-        {menuLinks.map((menuLink: MenuLink) => (
-          menuLink.type === 'anchor' ?
-            <StyledItem key={menuLink.path} onClick={() => handleAnchorClick(menuLink, true)} >
-              {t(menuLink.identifier)}
-            </StyledItem>
-          : menuLink.type === "link" ?
-            <StyledItem onClick={(e) => handleLinkClick(e.domEvent, menuLink, true)}>
-              <StyledLink to={menuLink.path}>
-                {t(menuLink.identifier)}
-              </StyledLink>
-            </StyledItem>
-          : 
-          <StyledSubMenu key={menuLink.name} title={t(menuLink.identifier)}>
-            {menuLink.items.map((obj, i) => (
-              <Menu.Item key={obj.name} onClick={() => handleItemClick(i, true)}>{obj.name}</Menu.Item>
-            ))}
-          </StyledSubMenu>
-        ))}
-      </StyledMenu>
-      </StyledDrawer>
+      <Menu
+        menuLinks={menuLinks}
+        handleAnchorClick={handleAnchorClick}
+        handleItemClick={handleItemClick}
+        handleLinkClick={handleLinkClick}
+      />
+      <Drawer 
+        open={showDrawer} 
+        menuLinks={menuLinks}
+        onClose={onClose}
+        handleAnchorClick={handleAnchorClick}
+        handleItemClick={handleItemClick}
+        handleLinkClick={handleLinkClick}
+      />
     </HeaderWrapper>
   );
 }
