@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
     min-height: -webkit-fill-available;
   }
   html {
-    height: -webkit-fill-available;
+    height: -webkit-fill-available;track
   } */
 
   h2, p, body, input, button {
@@ -26,19 +26,21 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   /* ::-webkit-scrollbar {
-    width: 15px;
+    width: 6px;
     height: 30px;
+    background-color: transparent;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: linear-gradient(180deg,#fff,${props => props.theme.colors.green});
+    background: ${props => props.theme.colors.foreground};
     border-radius: 30px;
+    padding: 0 20px;
     box-shadow: inset 2px 2px 2px hsla(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
   }
 
   ::-webkit-scrollbar-track {
-    background: #f0f0f0;
-    background: linear-gradient(90deg,${props => props.theme.colors.background},${props => props.theme.colors.background} 1px,${props => props.theme.colors.background} 0,${props => props.theme.colors.background});
+    background-color: transparent;
+    /* background: linear-gradient(90deg,${props => props.theme.colors.background},${props => props.theme.colors.background} 1px,${props => props.theme.colors.background} 0,${props => props.theme.colors.background}); 
   } */
 `;
 

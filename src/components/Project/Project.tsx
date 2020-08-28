@@ -26,7 +26,7 @@ const ProjectComponent: React.FC<ProjectComponentProps> = ({project, index}) => 
       <Techs>
         Techs: 
         {project.techs.map((obj, j) => (
-          <Tooltip title={t(`projects:${index}.techs.${j}.description`)}>
+          <Tooltip key={j} title={t(`projects:${index}.techs.${j}.description`)}>
             <LittleLogo src={obj.logoPath} alt={obj.name} onClick={() => window.open(obj.link, '_blank')} style={{width: 50}}/> 
           </Tooltip>
         ))}
@@ -46,4 +46,4 @@ const ProjectComponent: React.FC<ProjectComponentProps> = ({project, index}) => 
   );
 }
 
-export default ProjectComponent;
+export default React.memo(ProjectComponent);

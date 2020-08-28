@@ -26,7 +26,7 @@ const Drawer: React.FC<DrawerProps> = ({open, menuLinks, onClose, handleAnchorCl
               {t(menuLink.identifier)}
             </StyledItem>
           : menuLink.type === "link" ?
-            <StyledItem onClick={(e) => handleLinkClick(e.domEvent, menuLink, true)}>
+            <StyledItem key={menuLink.path} onClick={(e) => handleLinkClick(e.domEvent, menuLink, true)}>
               <StyledLink to={menuLink.path}>
                 {t(menuLink.identifier)}
               </StyledLink>

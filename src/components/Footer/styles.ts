@@ -10,6 +10,7 @@ export const StyledParallaxLayer = styled(ParallaxLayer)`
   padding: 0 130px;
   position: absolute;
   bottom:0;
+  z-index:100;
   @media (min-width: 425px) and (max-width: 768px){
     flex-direction: column-reverse;
     justify-content: center;

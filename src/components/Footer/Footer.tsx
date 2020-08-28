@@ -37,4 +37,4 @@ const Footer: React.FC<FooterProps> = ({pages, social}) => {
   );
 }
 
-export default Footer;
+export default React.memo(Footer);

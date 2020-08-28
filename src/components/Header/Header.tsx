@@ -89,4 +89,4 @@ const Header = ({menuLinks, parallaxRef, projects, offsets}: HeaderProps) => {
   );
 }
 
-export default Header;
+export default React.memo(Header);

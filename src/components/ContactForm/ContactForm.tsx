@@ -141,4 +141,4 @@ const PhoneNumberInput = ({onChange, value, id, ...rest}) => {
 }
 
 
-export default ContactForm;
+export default React.memo(ContactForm);

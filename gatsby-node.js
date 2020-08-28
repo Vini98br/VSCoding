@@ -3,8 +3,8 @@ exports.onCreateNode = ({ node, actions }) => {
   const { createNode, createNodeField } = actions;
   // if(node.internal.type === 'File')
   //   console.log(JSON.stringify(node, undefined, 4))
-  if(node.internal.type === 'ProjectsJson')
-  console.log(node.imagesDirectory)
+  // if(node.internal.type === 'ProjectsJson')
+  // console.log(node.imagesDirectory)
 }
 
 exports.createPages = async ({ graphql, actions, reporter }) => {

@@ -27,7 +27,7 @@ const CustomMenu: React.FC<MenuProps> = ({menuLinks, handleAnchorClick, handleIt
             </StyledLink>
           </StyledItem>
         : menuLink.type === "link" ?
-          <StyledItem onClick={(e) => handleLinkClick(e.domEvent, menuLink, false)}>
+          <StyledItem key={menuLink.path} onClick={(e) => handleLinkClick(e.domEvent, menuLink, false)}>
             <StyledLink to={menuLink.path}>
               {t(menuLink.identifier)}
             </StyledLink>

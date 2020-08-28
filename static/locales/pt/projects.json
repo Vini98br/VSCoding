@@ -35,7 +35,7 @@
     "offset": 1,
     "smOffset": 1.5,
     "mainImagePath": "images/hipatia.png",
-    "description": "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.",
+    "description": "O aplicativo Hipátia possui uma ideia muito interessante, fornecer às mulheres, e apenas elas, um espaço para divulgarem seus serviços ao público que utiliza o app. E então por meio das redes sociais e dados informados nos anúncios, as pessoas conseguem entrar em contato e contratar o serviço. Vale ressaltar que foi o primeiro projeto em que tive contato com a stack Javascript ( ReactJS, React Native, Node e etc) e que atualmente é a minha preferida. Utilizamos no desenvolvimento: React Native, ExpressJS (framework de NodeJS) e banco de dados NoSQL MongoDB, os quais também se encontram abaixo.",
     "link": "",
     "techs":[
       {

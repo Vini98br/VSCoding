@@ -14,7 +14,7 @@ const Skills: React.FC<{skills: ISkill[]}>= ({skills}) => {
       <Divider />
       <SkillsWrapper>    
         {skills.map(obj => (
-          <Skill>
+          <Skill key={obj.id}>
             <SkillLable>
               {obj.name} 
             </SkillLable>
@@ -28,4 +28,4 @@ const Skills: React.FC<{skills: ISkill[]}>= ({skills}) => {
   );
 }
 
-export default Skills;
+export default React.memo(Skills);

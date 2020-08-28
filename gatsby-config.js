@@ -25,6 +25,8 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     `gatsby-transformer-json`,
     `gatsby-plugin-material-ui`,
+    `gatsby-transformer-sharp`, 
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

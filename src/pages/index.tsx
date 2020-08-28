@@ -7,6 +7,7 @@ import "../i18n/i18n";
 import Project from "../components/Project/Project";
 import Skills from "../components/Skills/Skills";
 import ContactForm from "../components/ContactForm/ContactForm";
+import About from "../components/About/About";
 import { Helmet } from "react-helmet";
 import { 
   Divider,
@@ -34,9 +35,10 @@ const useHomeData = () => {
             }
           }
         }
-        allSkillsJson {
+        allSkillsJson(sort: {fields: rate, order: DESC}) {
           edges {
             node {
+              id
               name
               rate
             }
@@ -79,6 +81,7 @@ const useHomeData = () => {
 export interface ISkill {
   name: string;
   rate: number;
+  id: number;
 }
 
 interface Tech {
@@ -110,6 +113,10 @@ export default function Home() {
   const isSM = height <= 667 || width <= 960;
   const pages = isSM ? 7 : 5;
   const offsets = {
+    about:{
+      md: pages - 1,
+      sm: pages - 1.1
+    },
     contact:{
       md: 3.3,
       sm: 4.9,
@@ -130,24 +137,26 @@ export default function Home() {
       </Helmet>
       <Layout pages={pages} projects={projects} offsets={offsets}>
         {projects.map((project: IProject, i: number) => (
-          <StyledParallaxLayer invert={i % 2 !== 0} factor={isSM ? 1.2 : 0.8} offset={isSM ? project.smOffset : project.offset} speed={0.7}>
+          <StyledParallaxLayer key={project.title} invert={i % 2 !== 0} factor={isSM ? 1.2 : 0.8} offset={isSM ? project.smOffset : project.offset} speed={0.7}>
             <StyledMainImage src={project.mainImagePath} alt={project.title}/>
             <Project project={project} index={i} />
           </StyledParallaxLayer>
         ))} 
         <StyledParallaxLayer invert factor={isSM ? 2 : 0.8} offset={isSM ? offsets.skills.sm : offsets.skills.md} speed={0.7}>
-          <a id='skills'></a>
           <Skills skills={skills} />
         </StyledParallaxLayer>
         <StyledParallaxLayer factor={isSM ? 1.2 : 0.99} offset={isSM ? offsets.contact.sm : offsets.contact.md} speed={0.7}>
           <ContactForm />
         </StyledParallaxLayer>
-        {images.filter((image: any) => image.node.name[0] !== '_' ).map((obj: any, i: number) => (
-          <div id={obj.node.id} >
-            <ParallaxLayer speed={-0.1} offset={(i * 0.6) + 0.5}>
+        <StyledParallaxLayer invert factor={isSM ? 1.2 : 0.99} offset={isSM ? offsets.about.sm : offsets.about.md} speed={0.7}>
+          <About />
+        </StyledParallaxLayer>
+        {images
+          .filter((image: any) => image.node.name[0] !== '_' )
+          .map((obj: any, i: number) => (
+            <ParallaxLayer key={obj.node.id} speed={-0.1} offset={(i * 0.6) + 0.5}>
               <StyledLogo src={obj.node.publicURL} alt={obj.node.name} style={{position:'absolute', right: getIntRandomNumber(20,width),opacity: 0.2}}/> 
             </ParallaxLayer>
-          </div>
         ))}
       </Layout>
     </>
