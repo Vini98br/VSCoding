@@ -1,0 +1,113 @@
+[
+  {
+    "title": "Site Porte JR",
+    "offset": 0.7,
+    "smOffset": 0.7,
+    "mainImagePath": "images/porte.png",
+    "description": "This website fits itself as institutional and has been developed for Porte junior enterprise. Such a company operates in the architect and engineering business. The website in addition to containing info about the company it also counts with a blog that shares information and curiosity that surround the world of construction, energy, and environment. Added to that, our team, always thinking about product value, we also include a live chat (Jivo) for better attending the website visitants.",
+    "link": "portejr.com.br",
+    "techs":[
+      {
+        "name":"wordpress",
+        "logoPath": "/images/logos/wordpress.png",
+        "description": "WordPress",
+        "link": "https://br.wordpress.org/"
+      }
+    ],
+    "featuredImages": [
+      {
+        "name": "00_home",
+        "path": "/images/porte/00_home.png"
+      },
+      {
+        "name": "01_home",
+        "path": "/images/porte/01_home.png"
+      },
+      {
+        "name": "02_home",
+        "path": "/images/porte/02_home.png"
+      }
+    ],
+    "imagesDirectory":"porte"
+  },
+  {
+    "title": "Hipátia Mobile App",
+    "offset": 1,
+    "smOffset": 2,
+    "mainImagePath": "images/hipatia.png",
+    "description": "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.",
+    "link": "",
+    "techs":[
+      {
+        "name":"native",
+        "logoPath": "/images/logos/_native.png",
+        "description": "React Native",
+        "link": "https://reactnative.dev/"
+      },
+      {
+        "name":"node",
+        "logoPath": "/images/logos/_nodejs.png",
+        "description": "NodeJs",
+        "link": "https://nodejs.org/"
+      },
+      {
+        "name":"mongoDB",
+        "logoPath": "/images/logos/mongoDB.png",
+        "description": "MongoDB",
+        "link": "https://www.mongodb.com/"
+      }
+    ],
+    "featuredImages": [
+      {
+        "name": "00_home",
+        "path": "/images/porte/00_home.png"
+      },
+      {
+        "name": "01_home",
+        "path": "/images/porte/00_home.png"
+      },
+      {
+        "name": "02_home",
+        "path": "/images/porte/00_home.png"
+      }
+    ],
+    "imagesDirectory":"hipatia"
+  },
+  {
+    "title": "Checkout and Dashboard AVEC",
+    "offset": 1.9,
+    "smOffset": 2.3,
+    "mainImagePath": "images/avec.png",
+    "description": "Lorem Ipsum é simply uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.",
+    "link": "",
+    "techs":[
+      {
+        "name":"react",
+        "logoPath": "/images/logos/react.png",
+        "description": "React Js",
+        "link": "https://reactjs.org/"
+      },
+      {
+        "name":"Sydle one",
+        "logoPath": "/images/logos/_sydleOne.png",
+        "description": "SYDLE ONE é uma plataforma low-code e BaaS (Backend as a Service) internamente utiliza Java e Angular, e oferece a possibilidade de injeção de scripts via RHINO. Por meio deste que foram geradas as API às quais foram consumidas pela aplicação em ReactJs.",
+        "link": "https://www.sydle.com/br/"
+      }
+    ],
+    "featuredImages": [
+      {
+        "name": "Dashboard",
+        "path": "/images/avec/Avec-Dashboard.png"
+      },
+      {
+        "name": "Carrinho",
+        "path": "/images/avec/Carrinho.png"
+      },
+      {
+        "name": "Step1",
+        "path": "/images/avec/step1.png"
+      }
+    ],
+    "imagesDirectory":"avec"
+  }
+]
