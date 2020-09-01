@@ -110,7 +110,7 @@ export default function Home() {
   const { t, i18n } = useTranslation(['projects', 'translation']);
   const { height, width } = useMedia();
   const { images, projects, skills } = useHomeData();
-  const isSM = height <= 667 || width <= 960;
+  const isSM = height <= 667 || width <= 1080;
   const pages = isSM ? 7 : 5;
   const offsets = {
     about:{
