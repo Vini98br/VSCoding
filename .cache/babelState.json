@@ -7,7 +7,7 @@
           "stage": "develop",
           "options": {
             "plugins": [],
-            "displayName": false,
+            "displayName": true,
             "ssr": false
           }
         },
@@ -72,7 +72,7 @@
           "stage": "develop-html",
           "options": {
             "plugins": [],
-            "displayName": false,
+            "displayName": true,
             "ssr": false
           }
         }
@@ -117,7 +117,7 @@
           "stage": "build-html",
           "options": {
             "plugins": [],
-            "displayName": false,
+            "displayName": true,
             "ssr": true
           }
         }
@@ -162,7 +162,7 @@
           "stage": "build-javascript",
           "options": {
             "plugins": [],
-            "displayName": false,
+            "displayName": true,
             "ssr": true
           }
         }

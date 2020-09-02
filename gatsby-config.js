@@ -7,7 +7,6 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-174028885-1",
-        head: true,
       },
     },
     {
@@ -16,6 +15,10 @@ module.exports = {
         fonts: [
           {
             family: `Roboto`,
+            variants: [`300`, `500`, `700`]
+          },
+          {
+            family: `Archivo`,
             variants: [`300`, `500`, `700`]
           },
         ],

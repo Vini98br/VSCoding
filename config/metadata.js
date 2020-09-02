@@ -10,7 +10,7 @@ module.exports = {
     },
     {
       "name": "Linkedin",
-      "link": "https://www.linkedin.com/in/vinicius-soran%C3%A7o-20054a193/",
+      "link": "https://www.linkedin.com/in/vinicius-soran%C3%A7o/",
     },
     {
       "name": "Instagram",
@@ -23,6 +23,12 @@ module.exports = {
       "path": "/",
       "name": "Home",
       "identifier": "home"
+    },
+    {
+      "type": "anchor",
+      "path": "about",
+      "identifier": "aboutSectionTitle",
+      "name": "Sobre mim",
     },
     {
       "type": "drop",

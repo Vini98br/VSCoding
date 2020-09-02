@@ -2,7 +2,6 @@ import React, { useRef } from 'react';
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import { graphql, useStaticQuery } from "gatsby";
-import Helmet from "react-helmet";
 import { Container, Content, Anchor } from './styles';
 import { createGlobalStyle } from "styled-components";
 
@@ -22,26 +21,8 @@ export const GlobalStyle = createGlobalStyle`
   } */
 
   h2, p, body, input, button {
-    font-family: ${props => props.theme.fontFamily};
+    font-family: ${props => props.theme.fontFamily}, 'Archivo';
   }
-
-  /* ::-webkit-scrollbar {
-    width: 6px;
-    height: 30px;
-    background-color: transparent;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: ${props => props.theme.colors.foreground};
-    border-radius: 30px;
-    padding: 0 20px;
-    box-shadow: inset 2px 2px 2px hsla(0,0%,100%,.25), inset -2px -2px 2px rgba(0,0,0,.25);
-  }
-
-  ::-webkit-scrollbar-track {
-    background-color: transparent;
-    /* background: linear-gradient(90deg,${props => props.theme.colors.background},${props => props.theme.colors.background} 1px,${props => props.theme.colors.background} 0,${props => props.theme.colors.background}); 
-  } */
 `;
 
 const useSiteMetadata = () => {

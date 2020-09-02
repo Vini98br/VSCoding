@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Tooltip, TooltipProps } from "@material-ui/core";
 // import {  } from "./styles";
 import styled from 'styled-components';

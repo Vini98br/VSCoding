@@ -1,5 +1,4 @@
 import React from 'react';
-import { ParallaxLayer } from 'react-spring/renderprops-addons';
 import { GithubOutlined, LinkedinOutlined, InstagramOutlined } from "@ant-design/icons";
 import { StyledParallaxLayer, IconsWrapper, Copyright, IconButton } from './styles';
 import useMedia from '../../hooks/useMedia';

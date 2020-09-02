@@ -5,7 +5,7 @@ import { Container, Image, Content, Title, Description, Divider } from './styles
 const About: React.FC = () => {
   return (
     <Container>
-      <Image src={'https://media-exp1.licdn.com/dms/image/C4D03AQFslH0kG98L1g/profile-displayphoto-shrink_200_200/0?e=1603929600&v=beta&t=r29BdXpCDXInhDNRzSWZarVjNnEFU3arhkClHUTkJ5A'} />
+      <Image alt='me' src={require('../../../static/images/me.jpeg')} />
       <Content>
         <Title>
           Sobre Mim

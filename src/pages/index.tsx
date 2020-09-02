@@ -1,8 +1,8 @@
-import React, { useCallback, useRef, createRef } from "react"
+import React from "react"
 import Layout from "../components/Layout/Layout";
 import { graphql, useStaticQuery } from "gatsby";
 import { useTranslation } from "react-i18next";
-import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons'
+import { ParallaxLayer } from 'react-spring/renderprops-addons'
 import "../i18n/i18n";
 import Project from "../components/Project/Project";
 import Skills from "../components/Skills/Skills";
@@ -10,12 +10,10 @@ import ContactForm from "../components/ContactForm/ContactForm";
 import About from "../components/About/About";
 import { Helmet } from "react-helmet";
 import { 
-  Divider,
   StyledParallaxLayer,
   StyledLogo,
   StyledMainImage
 } from "./styles";
-import { object } from "yup";
 import useMedia from "../hooks/useMedia";
 
 const getIntRandomNumber = (min: number, max: number) => {
@@ -73,8 +71,8 @@ const useHomeData = () => {
   );
   return {
     images: allFile.edges, 
-    projects: allProjectsJson.edges.map(obj => obj.node),
-    skills: allSkillsJson.edges.map(obj => obj.node)
+    projects:[...allProjectsJson.edges.map(obj => obj.node)],
+    skills: [...allSkillsJson.edges.map(obj => obj.node)]
   };
 }
 
@@ -118,12 +116,12 @@ export default function Home() {
       sm: pages - 1.1
     },
     contact:{
-      md: 3.3,
-      sm: 4.9,
+      md: projects.length + 0.3,
+      sm: projects.length + 1.9,
     },
     skills: {
-      md: 2.5,
-      sm: 3.2
+      md: projects.length - 0.5,
+      sm: projects.length + 0.2
     }
   };
 
@@ -134,6 +132,7 @@ export default function Home() {
         <title>Home</title>
         <meta charSet="utf-8" />
         <meta name="description" content="Vs coding is simple website as portfólio to show all projects i`ve made."></meta>
+        <link rel="preconnect" href="https://www.linkedin.com/in/vinicius-soran%C3%A7o/" crossOrigin=''></link>
       </Helmet>
       <Layout pages={pages} projects={projects} offsets={offsets}>
         {projects.map((project: IProject, i: number) => (

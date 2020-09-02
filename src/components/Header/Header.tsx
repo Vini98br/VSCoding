@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { StyledLink, StyledMenu, StyledItem, StyledSubMenu, HeaderWrapper, StyledMenuIcon, StyledDrawer } from './styles';
+import { HeaderWrapper, StyledMenuIcon } from './styles';
 import { IProject } from "../../pages/index";
 import { useTranslation } from 'react-i18next';
 import useMedia from '../../hooks/useMedia';

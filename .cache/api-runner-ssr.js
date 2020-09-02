@@ -3,7 +3,7 @@ var plugins = [{
       options: {"plugins":[],"trackingId":"UA-174028885-1","head":true},
     },{
       plugin: require('/home/vinicius/code/mysite/node_modules/gatsby-plugin-prefetch-google-fonts/gatsby-ssr'),
-      options: {"plugins":[],"fonts":[{"family":"Roboto","variants":["300","500","700"]}]},
+      options: {"plugins":[],"fonts":[{"family":"Roboto","variants":["300","500","700"]},{"family":"Archivo","variants":["300","500","700"]}]},
     },{
       plugin: require('/home/vinicius/code/mysite/node_modules/gatsby-plugin-react-helmet/gatsby-ssr'),
       options: {"plugins":[]},
@@ -18,7 +18,7 @@ var plugins = [{
       options: {"plugins":[],"siteUrl":"https://www.vscoding.com.br"},
     },{
       plugin: require('/home/vinicius/code/mysite/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
-      options: {"plugins":[],"displayName":false},
+      options: {"plugins":[],"displayName":true},
     },{
       plugin: require('/home/vinicius/code/mysite/gatsby-ssr'),
       options: {"plugins":[]},
