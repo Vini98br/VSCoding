@@ -1,5 +1,6 @@
-import styled, { keyframes } from 'styled-components';
-import { Parallax, ParallaxLayer } from 'react-spring/renderprops-addons'
+import styled from 'styled-components';
+import { ParallaxLayer } from 'react-spring/renderprops-addons'
+import Img, { GatsbyImageProps } from 'gatsby-image';
 
 export const Container = styled.div`
   color: ${props => props.theme.colors.comment};
@@ -10,20 +11,26 @@ export const StyledMainImage = styled.img`
   width: 600px;
 `;
 
-export const StyledLogo = styled.img`
-  width:300px;
-  filter: grayscale(70%) blur(3px);
-  z-index:1;
-  @media (min-width: 660px) and (max-width:1080px){
-    width: 200px;
-  }
-  @media (min-width: 425px) and (max-width:659px){
-    width: 170px;
-  }
-  @media (max-width:424px),  (max-height: 768px){
-    width: 150px;
-  }
+// export const StyledLogo = styled.img`
+//   width:300px;
+//   filter: grayscale(70%) blur(3px);
+//   z-index:1;
+//   @media (min-width: 660px) and (max-width:1080px){
+//     width: 200px;
+//   }
+//   @media (min-width: 425px) and (max-width:659px){
+//     width: 170px;
+//   }
+//   @media (max-width:424px),  (max-height: 768px){
+//     width: 150px;
+//   }
 
+// `;
+export const StyledLogo = styled(Img)<GatsbyImageProps>`
+  &&{
+    filter: grayscale(70%) blur(3px);
+    z-index:1;
+  }
 `;
 
 export const StyledParallaxLayer = styled(ParallaxLayer)<{invert?: boolean}>`

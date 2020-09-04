@@ -1,6 +1,6 @@
 var plugins = [{
       plugin: require('/home/vinicius/code/mysite/node_modules/gatsby-plugin-google-analytics/gatsby-ssr'),
-      options: {"plugins":[],"trackingId":"UA-174028885-1","head":true},
+      options: {"plugins":[],"trackingId":"UA-174028885-1"},
     },{
       plugin: require('/home/vinicius/code/mysite/node_modules/gatsby-plugin-prefetch-google-fonts/gatsby-ssr'),
       options: {"plugins":[],"fonts":[{"family":"Roboto","variants":["300","500","700"]},{"family":"Archivo","variants":["300","500","700"]}]},

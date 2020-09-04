@@ -29,7 +29,16 @@ const useHomeData = () => {
             node {
               id
               name
-              publicURL
+              mobile: childImageSharp {
+                fixed(width: 150) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
+              desktop: childImageSharp {
+                fixed(width: 250) {
+                  ...GatsbyImageSharpFixed
+                }
+              }
             }
           }
         }
@@ -70,7 +79,7 @@ const useHomeData = () => {
     `
   );
   return {
-    images: allFile.edges, 
+    images: [...allFile.edges.map(obj=> obj.node)], 
     projects:[...allProjectsJson.edges.map(obj => obj.node)],
     skills: [...allSkillsJson.edges.map(obj => obj.node)]
   };
@@ -108,6 +117,7 @@ export default function Home() {
   const { t, i18n } = useTranslation(['projects', 'translation']);
   const { height, width } = useMedia();
   const { images, projects, skills } = useHomeData();
+  console.log(images)
   const isSM = height <= 667 || width <= 1080;
   const pages = isSM ? 7 : 5;
   const offsets = {
@@ -151,10 +161,21 @@ export default function Home() {
           <About />
         </StyledParallaxLayer>
         {images
-          .filter((image: any) => image.node.name[0] !== '_' )
+          .filter((image: any) => image.name.charAt(0) !== '_' )
           .map((obj: any, i: number) => (
-            <ParallaxLayer key={obj.node.id} speed={-0.1} offset={(i * 0.6) + 0.5}>
-              <StyledLogo src={obj.node.publicURL} alt={obj.node.name} style={{position:'absolute', right: getIntRandomNumber(20,width),opacity: 0.2}}/> 
+            <ParallaxLayer key={obj.id} speed={-0.1} offset={(i * 0.6) + 0.5}>
+              {/* <StyledLogo src={obj.node.publicURL} alt={obj.node.name} style={{position:'absolute', right: getIntRandomNumber(20,width),opacity: 0.2}}/>  */}
+              <StyledLogo 
+                fixed={[
+                  obj.mobile.fixed,
+                  {
+                    ...obj.desktop.fixed,
+                    media: `(min-width: 768px)`,
+                  },
+                ]} 
+                imgStyle={{opacity: 0.2}} 
+                style={{position:'absolute', right: getIntRandomNumber(50,width)}}
+              /> 
             </ParallaxLayer>
         ))}
       </Layout>
