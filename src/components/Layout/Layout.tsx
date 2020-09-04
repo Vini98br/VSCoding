@@ -4,6 +4,7 @@ import Header from "../Header/Header";
 import { graphql, useStaticQuery } from "gatsby";
 import { Container, Content, Anchor } from './styles';
 import { createGlobalStyle } from "styled-components";
+import Seo from '../Seo/Seo';
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -32,6 +33,8 @@ const useSiteMetadata = () => {
         site {
           siteMetadata {
             title
+            siteUrl
+            description
             social {
               name
               link
@@ -41,7 +44,7 @@ const useSiteMetadata = () => {
               type
               identifier
               path
-              items{
+              items {
                 name
                 type
               }
@@ -61,12 +64,18 @@ export interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({children, pages, projects, offsets}) => {
-  const { menuLinks, social } = useSiteMetadata(); 
+  const { menuLinks, social, title, siteUrl, description } = useSiteMetadata(); 
   const parallax = useRef(null);
   return (
     <>
       <GlobalStyle />
       <Container pages={pages} scrolling ref={parallax}>
+        <Seo 
+          title={title}
+          description={description}
+          url={siteUrl}
+          image={require('../../../static/images/logos/_mylogo.png')}
+        />
         <Anchor>
           <Header menuLinks={menuLinks} parallaxRef={parallax} projects={projects} offsets={offsets}/>
           <Content>

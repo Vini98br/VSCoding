@@ -1,18 +1,18 @@
 import React from "react"
 import Layout from "../components/Layout/Layout";
 import { graphql, useStaticQuery } from "gatsby";
-import { useTranslation } from "react-i18next";
 import { ParallaxLayer } from 'react-spring/renderprops-addons'
 import "../i18n/i18n";
 import Project from "../components/Project/Project";
 import Skills from "../components/Skills/Skills";
 import ContactForm from "../components/ContactForm/ContactForm";
 import About from "../components/About/About";
-import { Helmet } from "react-helmet";
 import { 
   StyledParallaxLayer,
   StyledLogo,
-  StyledMainImage
+  StyledMainImage,
+  MyLogo,
+  LogoWrapper
 } from "./styles";
 import useMedia from "../hooks/useMedia";
 
@@ -114,10 +114,8 @@ export interface IProject {
 }
 
 export default function Home() {
-  const { t, i18n } = useTranslation(['projects', 'translation']);
   const { height, width } = useMedia();
   const { images, projects, skills } = useHomeData();
-  console.log(images)
   const isSM = height <= 667 || width <= 1080;
   const pages = isSM ? 7 : 5;
   const offsets = {
@@ -137,14 +135,12 @@ export default function Home() {
 
   return(
     <>
-      <Helmet>
-        <html lang={i18n.language}/>
-        <title>Home</title>
-        <meta charSet="utf-8" />
-        <meta name="description" content="Vs coding is simple website as portfólio to show all projects i`ve made."></meta>
-        <link rel="preconnect" href="https://www.linkedin.com/in/vinicius-soran%C3%A7o/" crossOrigin=''></link>
-      </Helmet>
       <Layout pages={pages} projects={projects} offsets={offsets}>
+        <StyledParallaxLayer invert factor={0.5} offset={0}>
+          <LogoWrapper>
+            <MyLogo src={require('../../static/images/main.png')} />
+          </LogoWrapper>
+        </StyledParallaxLayer>
         {projects.map((project: IProject, i: number) => (
           <StyledParallaxLayer key={project.title} invert={i % 2 !== 0} factor={isSM ? 1.2 : 0.8} offset={isSM ? project.smOffset : project.offset} speed={0.7}>
             <StyledMainImage src={project.mainImagePath} alt={project.title}/>

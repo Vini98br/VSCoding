@@ -33,6 +33,30 @@ export const StyledLogo = styled(Img)<GatsbyImageProps>`
   }
 `;
 
+export const LogoWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 200px;
+  @media (max-width: 768px){
+    justify-content: center;
+    padding: 0;
+  }
+`;
+
+export const MyLogo = styled.img`
+  width: 500px;
+  height: auto;
+  opacity: 0.8;
+  @media (min-width: 600px) and (max-width: 768px){
+    width: 400px;
+  }
+  @media (max-width: 599px){
+    width: 80%;
+  }
+`;
+
 export const StyledParallaxLayer = styled(ParallaxLayer)<{invert?: boolean}>`
   background-color: ${props => props.invert ? 'unset' : props.theme.colors.foreground}d1;
   opacity: ${props => props.invert ? 1 : 0.8};

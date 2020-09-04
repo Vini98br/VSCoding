@@ -1,8 +1,8 @@
 
 module.exports = {
-  title: 'VScoding',
-  siteUrl: 'https://www.vscoding.com.br',
-  description: '',
+  title: 'VSCoding',
+  siteUrl: 'https://vscoding.com.br',
+  description: 'VSCoding is simple website as portfólio to show all projects i`ve made.',
   social: [
     {
       "name": "GitHub",
