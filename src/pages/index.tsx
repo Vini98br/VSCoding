@@ -138,7 +138,7 @@ export default function Home() {
       <Layout pages={pages} projects={projects} offsets={offsets}>
         <StyledParallaxLayer invert factor={0.5} offset={0}>
           <LogoWrapper>
-            <MyLogo src={require('../../static/images/main.png')} />
+            <MyLogo src={require('../../static/images/main.png')} alt='VSCoding-logo' />
           </LogoWrapper>
         </StyledParallaxLayer>
         {projects.map((project: IProject, i: number) => (

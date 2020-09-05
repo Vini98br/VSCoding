@@ -47,13 +47,15 @@ export const LogoWrapper = styled.div`
 
 export const MyLogo = styled.img`
   width: 500px;
-  height: auto;
+  height: 500px;
   opacity: 0.8;
   @media (min-width: 600px) and (max-width: 768px){
     width: 400px;
+    height: 400px;
   }
   @media (max-width: 599px){
-    width: 80%;
+    width: 333px;
+    height: 333px;
   }
 `;
 
@@ -85,6 +87,14 @@ export const StyledParallaxLayer = styled(ParallaxLayer)<{invert?: boolean}>`
   @media screen and (max-width:424px),  (max-height: 768px){
     ${StyledMainImage} {
       width: 200px;
+    }
+  }
+  button{
+    background-color: ${props => props.invert ? props.theme.colors.purple : props.theme.colors.background};
+    border: 1px solid ${props => props.invert ? props.theme.colors.purple : props.theme.colors.background};
+    &:hover{
+      background: ${props => props.invert ? '#a875f0 radial-gradient(circle, transparent 1%, #a875f0 1%) center/15000%' : 'black'};
+      box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
     }
   }
   span, p, h2, span a{

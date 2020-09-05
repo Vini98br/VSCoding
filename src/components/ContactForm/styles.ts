@@ -142,8 +142,6 @@ export const SubmitButton = styled.button`
   cursor: pointer;
   width: 30%;
   height: 40px;
-  background-color: ${props => props.theme.colors.purple};
-  border: 1px solid ${props => props.theme.colors.purple};
   z-index: 2;
   border-radius: 4px;
   color: ${props => props.theme.colors.foreground};
@@ -157,10 +155,6 @@ export const SubmitButton = styled.button`
   }
   &:focus{
     outline: 0;    
-  }
-  &:hover{
-    background: #a875f0 radial-gradient(circle, transparent 1%, #a875f0 1%) center/15000%;
-    box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
   }
 `;
 
