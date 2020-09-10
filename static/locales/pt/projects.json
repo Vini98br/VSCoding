@@ -35,17 +35,17 @@
     "offset": 1,
     "smOffset": 1.5,
     "mainImagePath": "images/hipatia.png",
-    "description": "O aplicativo Hipátia possui uma ideia muito interessante, fornecer às mulheres, e apenas elas, um espaço para divulgarem seus serviços ao público que utiliza o app. E então por meio das redes sociais e dados informados nos anúncios, as pessoas conseguem entrar em contato e contratar o serviço. Vale ressaltar que foi o primeiro projeto em que tive contato com a stack Javascript ( ReactJS, React Native, Node e etc) e rapidamente se tornou a stack que mais gosto de trabalhar. Utilizamos no desenvolvimento: React Native, ExpressJS (framework de NodeJS) e banco de dados NoSQL MongoDB, os quais também se encontram abaixo.",
+    "description": "O aplicativo Hipátia possui uma ideia muito interessante, fornecer às mulheres, e apenas elas, um espaço para divulgarem seus serviços ao público que utiliza o app. E então por meio das redes sociais e dados informados nos anúncios, as pessoas conseguem entrar em contato e contratar o serviço. Vale ressaltar que foi o primeiro projeto em que tive contato com a stack Javascript ( ReactJS, React Native, Node e etc) e rapidamente se tornou a stack que mais gosto de trabalhar. Utilizamos no desenvolvimento: React Native, ExpressJS (framework de NodeJS) e banco de dados NoSQL MongoDB, os quais também se encontram abaixo. Projeto ainda se encontra em desenvolvimento.",
     "link": "",
     "techs":[
       {
-        "name":"native",
+        "name":"_native",
         "logoPath": "/images/logos/_native.png",
         "description": "React Native",
         "link": "https://reactnative.dev/"
       },
       {
-        "name":"node",
+        "name":"_nodejs",
         "logoPath": "/images/logos/_nodejs.png",
         "description": "NodeJs",
         "link": "https://nodejs.org/"
@@ -78,8 +78,8 @@
     "offset": 1.9,
     "smOffset": 2.3,
     "mainImagePath": "images/avec.png",
-    "description": "Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.",
-    "link": "",
+    "description": "Este é o Dashboard e Checkout da AVEC, empresa que atua no ramo de beleza, tanto na venda de cosméticos, quanto na venda de plataformas digitais. O checkout e Dashboard citados, foram feitos para atender a comercialização dos produtos digitais que são: sistema, aplicativos, máquinas de cartão, dentre outros. Os mesmos possuem, respectivamente, 5 etapas que vão da escolha do plano até o pagamento e uma central que possibilita visualizar o plano atual, pagamentos passados, faturas futuras, trocar forma de pagamento e uma loja com mais produtos. No Front-end utilizamos ReactJS e no Back-end utilizamos o SYDLE ONE para tratar as regras de negócio e prover os dados para o Front-end por APIs.",
+    "link": "https://checkout.avec.app/",
     "techs":[
       {
         "name":"react",
@@ -88,9 +88,9 @@
         "link": "https://reactjs.org/"
       },
       {
-        "name":"Sydle one",
+        "name":"_sydleOne",
         "logoPath": "/images/logos/_sydleOne.png",
-        "description": "Sydle one é uma plataforma low-code e BaaS (Backend as a Service) internamente utiliza Java e Angular, e oferece a possibilidade de injeção de scripts via RHINO. Por meio deste que foram geradas as API às quais foram consumidas pela aplicação em ReactJs.",
+        "description": "SYDLE ONE é uma plataforma low-code e BaaS (Backend as a Service), internamente utiliza Java e Angular, e oferece a possibilidade de injeção de scripts via RHINO. Por meio deste que são feitas as regras de negócio mais especificas que a plataforma não abrange e a criação de APIs e endpoints.",
         "link": "https://www.sydle.com/br/"
       }
     ],

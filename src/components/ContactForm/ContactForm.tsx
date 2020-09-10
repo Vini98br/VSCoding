@@ -31,7 +31,7 @@ const ContactForm: React.FC = () => {
   const { t, i18n } = useTranslation();
   const [isSendingEmail, setIsSendingEmail] = useState(false);
   const isPT = i18n.language === 'pt';
-  const { handleSubmit, register, errors, control } = useForm<IFormInputs>({
+  const { handleSubmit, register, errors, control, reset } = useForm<IFormInputs>({
     resolver: yupResolver(schema)
   });
   const onSubmit = (data: IFormInputs ) => {
@@ -39,6 +39,9 @@ const ContactForm: React.FC = () => {
     emailjs.send('my_gmail_service','my_template', data, 'user_kWJIc0v20AkWUP4HXdHeA')
     .then(() => {
       setIsSendingEmail(false);
+      reset({
+        phone: '',
+      });
       isPT ?
         Swal.fire(
           'E-mail enviado!',

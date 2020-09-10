@@ -35,7 +35,7 @@
     "offset": 1,
     "smOffset": 2,
     "mainImagePath": "images/hipatia.png",
-    "description": "The Hipátia app has a very interesting idea, give to the women, and just them, a place to share to the app audience the services they offer. Then, by social media and other personal data placed on the annoucement, the community can get in touch and hire the service. It is worth mentioning that was the first project I had contact with Javascript stack (ReactJS, React Native, Node, etc) and fastly turned itself my favorite stack. We used in the development: React Native, ExpressJS(NodeJS`s framework), and NoSQL database MongoDB, which also are below.",
+    "description": "The Hipátia app has a very interesting idea, give to the women, and just them, a place to share to the app audience the services they offer. Then, by social media and other personal data placed on the annoucement, the community can get in touch and hire the service. It is worth mentioning that was the first project I had contact with Javascript stack (ReactJS, React Native, Node, etc) and fastly turned itself my favorite stack. We used in the development: React Native, ExpressJS(NodeJS`s framework), and NoSQL database MongoDB, which also are below. The project still in development",
     "link": "",
     "techs":[
       {
@@ -78,8 +78,8 @@
     "offset": 1.9,
     "smOffset": 2.3,
     "mainImagePath": "images/avec.png",
-    "description": "Lorem Ipsum é simply uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado. Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.",
-    "link": "",
+    "description": "This is the Checkout and Dashboard for AVEC, which is a company that operates in the beauty business, both on cosmetics sales and digital platform sales. The Checkout e Dashboard cited, was done to attend the commercialization of the digital products, such as internal system, mobile app, card machine, among others. They have, respectively, 5 steps, going from choosing the plan to payment and a dashboard, that makes it possible to see the current plan, past payments, future invoices, payment way change, and a store with other products. In the Front-end we use ReactJS and in the Back-end we use SYDLE ONE to treat the business rules and provide the Front-end data with APIs.",
+    "link": "https://checkout.avec.app/",
     "techs":[
       {
         "name":"react",
@@ -90,7 +90,7 @@
       {
         "name":"Sydle one",
         "logoPath": "/images/logos/_sydleOne.png",
-        "description": "SYDLE ONE é uma plataforma low-code e BaaS (Backend as a Service) internamente utiliza Java e Angular, e oferece a possibilidade de injeção de scripts via RHINO. Por meio deste que foram geradas as API às quais foram consumidas pela aplicação em ReactJs.",
+        "description": "SYDLE ONE is a low-code and BaaS (Backend as a Service) platform, internally use Java and Angular. That platform offer the possibility of script injection with RHINO. Through this, are made the most specific business rules that the platform does not cover and the APIs and endpoints are made too.",
         "link": "https://www.sydle.com/br/"
       }
     ],

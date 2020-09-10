@@ -31,11 +31,19 @@ const useHomeData = () => {
               name
               mobile: childImageSharp {
                 fixed(width: 150) {
+                  originalName
                   ...GatsbyImageSharpFixed
                 }
               }
               desktop: childImageSharp {
                 fixed(width: 250) {
+                  originalName
+                  ...GatsbyImageSharpFixed
+                }
+              }
+              thumbnail: childImageSharp {
+                fixed(height: 40) {
+                  originalName
                   ...GatsbyImageSharpFixed
                 }
               }
@@ -116,6 +124,7 @@ export interface IProject {
 export default function Home() {
   const { height, width } = useMedia();
   const { images, projects, skills } = useHomeData();
+  console.log(images)
   const isSM = height <= 667 || width <= 1080;
   const pages = isSM ? 7 : 5;
   const offsets = {
@@ -144,7 +153,15 @@ export default function Home() {
         {projects.map((project: IProject, i: number) => (
           <StyledParallaxLayer key={project.title} invert={i % 2 !== 0} factor={isSM ? 1.2 : 0.8} offset={isSM ? project.smOffset : project.offset} speed={0.7}>
             <StyledMainImage src={project.mainImagePath} alt={project.title}/>
-            <Project project={project} index={i} />
+            <Project 
+              project={project} 
+              techsImages={
+                [...project.techs.map(tech => {
+                  return images.find(obj => obj.name === tech.name)?.thumbnail;
+                })]
+              } 
+              index={i} 
+            />
           </StyledParallaxLayer>
         ))} 
         <StyledParallaxLayer invert factor={isSM ? 2 : 0.8} offset={isSM ? offsets.skills.sm : offsets.skills.md} speed={0.7}>

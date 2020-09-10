@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import Img, { GatsbyImageProps } from "gatsby-image";
 
 export const ProjectTitle = styled.h2`
   font-size: 18px;
@@ -32,7 +33,7 @@ export const AvailableOn = styled.span`
   }
 `;
 
-export const Techs = styled.span`
+export const Techs = styled.span<{flexDirection?: string}>`
   color: ${props => props.theme.colors.currentLine};
   letter-spacing: 2px;
   font-weight: bold;
@@ -40,9 +41,12 @@ export const Techs = styled.span`
   margin-bottom: 20px;
   display:flex;
   align-items: center;
+  @media (max-width: 600px){
+    flex-direction: ${props => props.flexDirection};
+  }
 `;
 
-export const LittleLogo = styled.img`
+export const LittleLogo = styled(Img)<GatsbyImageProps>`
   width:auto;
   height: auto;
   margin: 0 10px;

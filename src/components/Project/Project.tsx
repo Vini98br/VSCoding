@@ -3,15 +3,15 @@ import { IProject } from "../../pages/index";
 import Tooltip from "../Tooltip/Tooltip";
 import { useTranslation } from "react-i18next";
 import { ProjectDescription, ProjectTitle, Divider, AvailableOn, Techs, LittleLogo, Container, FeaturedImage, FeaturedImagesWrapper, SeeMore} from './styles';
-import { useStaticQuery, graphql } from 'gatsby';
-
 interface ProjectComponentProps {
   project: IProject
   index: number;
+  techsImages: any[]
 }
 
-const ProjectComponent: React.FC<ProjectComponentProps> = ({project, index}) => {
+const ProjectComponent: React.FC<ProjectComponentProps> = ({project, index, techsImages}) => {
   const { t, i18n } = useTranslation(['projects', 'translation']);
+  console.log(techsImages)
   return (
     <Container invert={index % 2 !== 0}>
       <ProjectTitle>{t(`projects:${index}.title`)}</ProjectTitle>
@@ -23,11 +23,13 @@ const ProjectComponent: React.FC<ProjectComponentProps> = ({project, index}) => 
         </AvailableOn>
       }
       <ProjectDescription>{t(`projects:${index}.description`)}</ProjectDescription>
-      <Techs>
+      <Techs flexDirection={techsImages.some(obj => obj.fixed.width > 250) ? 'column' : 'row'}>
         Techs: 
-        {project.techs.map((obj, j) => (
+        {techsImages.map((obj, j) => (
           <Tooltip key={j} title={t(`projects:${index}.techs.${j}.description`)}>
-            <LittleLogo src={obj.logoPath} alt={obj.name} onClick={() => window.open(obj.link, '_blank')} style={{width: 50}}/> 
+            <div onClick={() => window.open(project.techs[j].link, '_blank')}>
+              <LittleLogo fixed={obj.fixed} alt={obj.fixed.originalName} />
+            </div>
           </Tooltip>
         ))}
       </Techs>

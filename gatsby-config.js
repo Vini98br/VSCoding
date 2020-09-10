@@ -27,7 +27,6 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
     `gatsby-transformer-json`,
-    `gatsby-plugin-material-ui`,
     `gatsby-transformer-sharp`, 
     `gatsby-plugin-sharp`,
     {

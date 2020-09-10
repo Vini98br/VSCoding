@@ -52,6 +52,7 @@ export const Title = styled.h2`
 export const Description = styled.p`
   margin-top: 15px;
   font-size: 16px;
+  letter-spacing: 1px;
 `;
 
 export const Divider = styled.hr`
