@@ -124,7 +124,6 @@ export interface IProject {
 export default function Home() {
   const { height, width } = useMedia();
   const { images, projects, skills } = useHomeData();
-  console.log(images)
   const isSM = height <= 667 || width <= 1080;
   const pages = isSM ? 7 : 5;
   const offsets = {

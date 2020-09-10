@@ -11,7 +11,6 @@ interface ProjectComponentProps {
 
 const ProjectComponent: React.FC<ProjectComponentProps> = ({project, index, techsImages}) => {
   const { t, i18n } = useTranslation(['projects', 'translation']);
-  console.log(techsImages)
   return (
     <Container invert={index % 2 !== 0}>
       <ProjectTitle>{t(`projects:${index}.title`)}</ProjectTitle>
