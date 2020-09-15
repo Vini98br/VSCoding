@@ -79,7 +79,7 @@
     "smOffset": 2.3,
     "mainImagePath": "images/avec.png",
     "description": "Este é o Dashboard e Checkout da AVEC, empresa que atua no ramo de beleza, tanto na venda de cosméticos, quanto na venda de plataformas digitais. O checkout e Dashboard citados, foram feitos para atender a comercialização dos produtos digitais que são: sistema, aplicativos, máquinas de cartão, dentre outros. Os mesmos possuem, respectivamente, 5 etapas que vão da escolha do plano até o pagamento e uma central que possibilita visualizar o plano atual, pagamentos passados, faturas futuras, trocar forma de pagamento e uma loja com mais produtos. No Front-end utilizamos ReactJS e no Back-end utilizamos o SYDLE ONE para tratar as regras de negócio e prover os dados para o Front-end por APIs.",
-    "link": "https://checkout.avec.app/",
+    "link": "checkout.avec.app/",
     "techs":[
       {
         "name":"react",
