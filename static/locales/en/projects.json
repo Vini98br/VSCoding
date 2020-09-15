@@ -79,7 +79,7 @@
     "smOffset": 2.3,
     "mainImagePath": "images/avec.png",
     "description": "This is the Checkout and Dashboard for AVEC, which is a company that operates in the beauty business, both on cosmetics sales and digital platform sales. The Checkout e Dashboard cited, was done to attend the commercialization of the digital products, such as internal system, mobile app, card machine, among others. They have, respectively, 5 steps, going from choosing the plan to payment and a dashboard, that makes it possible to see the current plan, past payments, future invoices, payment way change, and a store with other products. In the Front-end we use ReactJS and in the Back-end we use SYDLE ONE to treat the business rules and provide the Front-end data with APIs.",
-    "link": "https://checkout.avec.app/",
+    "link": "checkout.avec.app/",
     "techs":[
       {
         "name":"react",
