@@ -27,10 +27,10 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 ---
 ```bash
 # Clone este repositório
-$ git clone <https://github.com/Vini98br/SiteFolio>
+$ git clone <https://github.com/Vini98br/VSCoding>
 
 # Acesse a pasta do projeto no terminal/cmd
-$ cd SiteFolio
+$ cd VSCoding
 
 # Instale as dependências
 $ npm install
