@@ -1,10 +1,11 @@
 import React, { useRef } from 'react';
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
-import { graphql, useStaticQuery } from "gatsby";
 import { Container, Content, Anchor } from './styles';
 import { createGlobalStyle } from "styled-components";
 import Seo from '../Seo/Seo';
+import useSiteMetadata from '../../hooks/useSiteMetadata';
+import { graphql } from 'gatsby';
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -24,44 +25,39 @@ export const GlobalStyle = createGlobalStyle`
   h2, p, body, input, button {
     font-family: ${props => props.theme.fontFamily}, 'Archivo';
   }
-`;
 
-const useSiteMetadata = () => {
-  const {site} = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            siteUrl
-            description
-            social {
-              name
-              link
-            }
-            menuLinks {
-              name
-              type
-              identifier
-              path
-              items {
-                name
-                type
-              }
-            }
-          }
-        }
-      }
-    `
-  );
-  return site.siteMetadata;
-}
+  & .slick-prev, .slick-next {
+    font-size: 15px !important;
+  }
+
+  & .slick-prev:before, .slick-next:before  {
+    content: '' !important;
+    display: none;
+  }
+`;
 
 export interface LayoutProps {
   pages: any;
   projects?: any; 
   offsets?: any;
 }
+
+export const query = graphql`
+  fragment ProjectImages on FileEdge {
+    node {
+      id
+      name
+      childImageSharp {
+        thumbnail: fixed(height: 130, width: 130) {
+          ...GatsbyImageSharpFixed
+        }
+        original: fluid(maxWidth: 1000, quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`;
 
 const Layout: React.FC<LayoutProps> = ({children, pages, projects, offsets}) => {
   const { menuLinks, social, title, siteUrl, description } = useSiteMetadata(); 
@@ -85,7 +81,6 @@ const Layout: React.FC<LayoutProps> = ({children, pages, projects, offsets}) => 
         </Anchor>
       </Container>
     </>
-    
   );
 }
 

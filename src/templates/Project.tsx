@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { graphql } from "gatsby";
 import Layout from "../components/Layout/Layout";
 import { Image, StyledParallaxLayer, ImagesWrapper, ImageItem } from './styles';
-import ImageGallery from 'react-image-gallery';
+// import ImageGallery from 'react-image-gallery';
 import { useTransition, animated as a } from "react-spring";
 import useMedia from '../hooks/useMedia';
 export const query = graphql`

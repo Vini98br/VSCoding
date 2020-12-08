@@ -1,5 +1,5 @@
 import React from 'react';
-import { ISkill } from "../../pages/index";
+import { ISkill } from "../../pages/types";
 import { useTranslation } from "react-i18next";
 import { 
   Container, SkillsTitle, Skill, SkillLable, SkillRate, 

@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import { HeaderWrapper, StyledMenuIcon } from './styles';
-import { IProject } from "../../pages/index";
+import { IProject } from "../../pages/types";
 import { useTranslation } from 'react-i18next';
 import useMedia from '../../hooks/useMedia';
 import Drawer from "./Drawer";

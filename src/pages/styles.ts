@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { ParallaxLayer } from 'react-spring/renderprops-addons'
 import Img, { GatsbyImageProps } from 'gatsby-image';
 
@@ -116,3 +116,54 @@ export const Divider = styled.hr`
   border: 1px solid ${props => props.theme.colors.currentLine};
 `;
 
+
+export const Modal = styled.div`
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 100000; /* Sit on top */
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+`;
+
+const zoom = keyframes`
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+`;
+
+export const ModalImage = styled(Img)<GatsbyImageProps>`
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 1000px;
+  animation-name: ${zoom};
+  animation-duration: .6s;
+  @media only screen and (max-width: 700px){
+    width: 95%;
+  }
+`;
+
+export const CloseButton = styled.span`
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-weight: bold;
+  cursor: pointer;
+  :hover {
+    svg{
+      transition: 0.3s;
+      color: #bbb;
+      text-decoration: none;
+    }
+  }
+  svg{
+    color: white;
+    font-size: 30px;
+  }
+`;

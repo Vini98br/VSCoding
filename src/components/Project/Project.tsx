@@ -1,15 +1,18 @@
 import React from 'react';
-import { IProject } from "../../pages/index";
+import { IProject } from "../../pages/types";
 import Tooltip from "../Tooltip/Tooltip";
 import { useTranslation } from "react-i18next";
 import { ProjectDescription, ProjectTitle, Divider, AvailableOn, Techs, LittleLogo, Container, FeaturedImage, FeaturedImagesWrapper, SeeMore} from './styles';
+import ImagesCarrousel from '../ImagesCarrousel/index';
+
 interface ProjectComponentProps {
   project: IProject
   index: number;
-  techsImages: any[]
+  techsImages: any[],
+  images: any[]
 }
 
-const ProjectComponent: React.FC<ProjectComponentProps> = ({project, index, techsImages}) => {
+const ProjectComponent: React.FC<ProjectComponentProps> = ({project, index, techsImages, images}) => {
   const { t, i18n } = useTranslation(['projects', 'translation']);
   return (
     <Container invert={index % 2 !== 0}>
@@ -33,6 +36,7 @@ const ProjectComponent: React.FC<ProjectComponentProps> = ({project, index, tech
         ))}
       </Techs>
       <Divider />
+      <ImagesCarrousel invert={index % 2 !== 0} images={images} />
       {/* <FeaturedImagesWrapper>
         {project.featuredImages.map(img => (
           <FeaturedImage src={img.path}/>
